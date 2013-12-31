@@ -16,7 +16,7 @@ Quick Start
 
 2. Simply select the container element you want to apply to. The target can be any element.
 
-Say we have the following HTML structure:
+ Say we have the following HTML structure:
 
 ```html
 <div id="container">
@@ -26,7 +26,7 @@ Say we have the following HTML structure:
 </div>
 ```
 
-then we simply apply effect to the container.
+ then we simply apply effect to the container.
 
 ```javascript
 $("#container").sliphover();
