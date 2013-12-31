@@ -2,8 +2,14 @@
 * jquery sliphover 1.0
 * A hover effect with direction aware jQuery plugin inspired by
 * http://tympanus.net/TipsTricks/DirectionAwareHoverEffect/index2.html
+*
 * Author:Wayou
-* Bug reporting, suggestion, feature requirments:liuwayong@gmail.com
+*
+*Feel free to use only under the condition that keep this info
+*
+* Bug reporting, suggestion, feature requirments, you can:
+* mail to liuwayong@gmail.com
+* or visit this project on github https://github.com/Wayou/SlipHover
 */
 
 ;(function($,window,document,undefined){
