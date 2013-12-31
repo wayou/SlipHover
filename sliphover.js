@@ -5,7 +5,7 @@
 *
 * Author:Wayou
 *
-*Feel free to use only under the condition that keep this info
+* Licensed under the MIT license.
 *
 * Bug reporting, suggestion, feature requirments, you can:
 * mail to liuwayong@gmail.com
@@ -31,14 +31,16 @@
 			backgroundColor:'rgba(0,0,0,.5)',//specify the background color and opacity using rgba
 			reverse:false,
 			delay:0,
-			textMode:'auto'//specify how the overlay behavor when the text is too long that overflow, possible options are 'scroll' and 'auto'
+			textMode:'autoScroll',//specify how the overlay behavor when the text is too long that overflow, possible options are 'scroll' and 'autoScroll'
+			scrollSpeed:20,//if textMode is autoScroll, this option specify the scroll speed, the smaller the fast
+			height:'100%'//specify the height of the overlay
 		},
 		_overlayStyles:{
-			normalStyle:{'left':'0','top':'0'},
-			topStyle:{'left':'0','top':'-100%'},
-			rightStyle:{'left':'100%','top':'0'},
-			bottomStyle:{'left':'0','top':'100%'},
-			leftStyle:{'left':'-100%','top':'0'}
+			normalStyle:{'left':'0','bottom':'0'},
+			topStyle:{'left':'0','bottom':'100%'},
+			rightStyle:{'left':'100%','bottom':'0'},
+			bottomStyle:{'left':'0','bottom':'-100%'},
+			leftStyle:{'left':'-100%','bottom':'0'}
 		},
 		_ini:function(element,options){//the underscore indicates this is a private method
 
@@ -48,12 +50,40 @@
 				$targets=$element.find(options.target).size()>0?$element.find(options.target):$element;
 
 			$targets.each(function(){
+
 				var $container=that._createContainer($(this)),
-				$overlay=that._createOverlay($container,options,$(this));
+					$overlay=that._createOverlay($container,options,$(this)),
+					contentHeight=$overlay.children().height(),
+					overlayHeight=$overlay.height();
+
 				that._listenEvent($container,$overlay,options);
+
+				//if the text is overflow and the textMode options is set to 'autoScroll' then auto scroll
+				if (that.options.textMode==='autoScroll'&&contentHeight-overlayHeight>0) {
+
+					$overlay.css('overflow','hidden');
+
+					var scrollTop={top:-(contentHeight-overlayHeight)},
+					scrollBottom={top:0},
+					speed=(contentHeight-overlayHeight)*that.options.scrollSpeed;
+
+					$overlay.hover(function(){
+						that._alternateScroll($overlay.children(),scrollTop,scrollBottom,speed);
+						},function(){
+							$overlay.children().stop().css('top','0');
+						})
+				};
 			});
 
 			return $element;
+		},
+		_alternateScroll:function($element,ani1,ani2,speed){
+			var that=this;
+			$element.stop().animate(ani1,speed,'linear',function(){
+				$element.animate(ani2,speed,'linear',function(){
+					that._alternateScroll($element,ani1,ani2,speed);
+				});
+			});
 		},
 		_createContainer:function($target){
 
@@ -62,10 +92,10 @@
 			targetHeight=$target.innerHeight(),
 			borderWidth=($target.outerWidth()-$target.innerWidth())/2;
 
-			return $('<div class="sliphoverItem" style="width:'+targetWidth+'px;height:'+targetHeight+'px;overflow:hidden;position:absolute;top:'+(targetOffset.top+borderWidth)+'px;left:'+(targetOffset.left+borderWidth)+'px;">').insertBefore($target);
+			return $('<div class="sliphoverItem" style="width:'+targetWidth+'px;height:'+targetHeight+'px;text-align:center;overflow:hidden;position:absolute;top:'+(targetOffset.top+borderWidth)+'px;left:'+(targetOffset.left+borderWidth)+'px;">').insertBefore($target);
 		},
 		_createOverlay:function($container,options,$target){
-			var $overlay=$('<div class="sliphoverItemTitle" style="width:100%;height:100%;overflow:hidden;position:relative;color:'+this.options.fontColor+';background-color:'+this.options.backgroundColor+';">').html($target.attr(options.title)).css(this._overlayStyles.leftStyle);
+			var $overlay=$('<div class="sliphoverItemTitle" style="width:100%;height:'+this.options.height+';overflow:auto;position:absolute;color:'+this.options.fontColor+';background-color:'+this.options.backgroundColor+';">').html('<div style="position:relative;width:100%;">'+$target.attr(options.title)+'</div>').css(this._overlayStyles.leftStyle);
 			 $container.html($overlay);
 			 return $overlay;
 		},

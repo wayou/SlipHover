@@ -6,7 +6,7 @@ body{
 #wrapper{
 	width: 800px;
 	margin: 0 auto;
-	text-align: center;
+	
 	background-color: #fff;
 	padding: 5px;
 }
@@ -20,5 +20,10 @@ li{
 img{
 	width: 190px;
 	height: 190px;
+}
+
+.sliphoverItemTitle div{
+	display: inline-block;
+	vertical-align: middle;
 }
 
