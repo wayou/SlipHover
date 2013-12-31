@@ -1,0 +1,23 @@
+body{
+	background-color: #ddd;
+	margin: 0;
+}
+#wrapper{
+	width: 800px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #fff;
+	padding: 5px;
+}
+li{
+	list-style: none;
+	overflow: hidden;
+	display: inline-block;
+	 border: 2px solid #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+img{
+	width: 190px;
+	height: 190px;
+	border: 2px solid #adadad;
+}
