@@ -7,7 +7,7 @@ Apply direction aware hover animation to images or any other elements
 Quick Start
 ---
 
-1. Just like using other jQuery plugins, first include the jQuery and the plugin js file to your page
+1. Just like using other jQuery plugins, first include the jQuery and the plugin js file to your page.
 
 ```html
 <script src="path/to/jquery.min.js"></script>
@@ -26,7 +26,7 @@ Quick Start
 </div>
 ```
 
- then we simply apply effect to the container.
+  then we simply apply effect to the container.
 
 ```javascript
 $("#container").sliphover();
