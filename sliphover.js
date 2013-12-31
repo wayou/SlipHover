@@ -58,9 +58,11 @@
 		_createContainer:function($target){
 
 			var targetOffset=$target.offset(),
-			targetWidth=$target.outerWidth(),
-			targetHeight=$target.outerHeight();
-			return $('<div class="sliphoverItem" style="width:'+targetWidth+';height:'+targetHeight+';overflow:hidden;position:absolute;top:'+targetOffset.top+'px;left:'+targetOffset.left+'px;">').insertBefore($target);
+			targetWidth=$target.innerWidth(),
+			targetHeight=$target.innerHeight(),
+			borderWidth=($target.outerWidth()-$target.innerWidth())/2;
+
+			return $('<div class="sliphoverItem" style="width:'+targetWidth+'px;height:'+targetHeight+'px;overflow:hidden;position:absolute;top:'+(targetOffset.top+borderWidth)+'px;left:'+(targetOffset.left+borderWidth)+'px;">').insertBefore($target);
 		},
 		_createOverlay:function($container,options,$target){
 			var $overlay=$('<div class="sliphoverItemTitle" style="width:100%;height:100%;overflow:hidden;position:relative;color:'+this.options.fontColor+';background-color:'+this.options.backgroundColor+';">').html($target.attr(options.title)).css(this._overlayStyles.leftStyle);

@@ -1,6 +1,7 @@
 body{
 	background-color: #ddd;
 	margin: 0;
+	font-family: arial;
 }
 #wrapper{
 	width: 800px;
