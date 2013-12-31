@@ -34,4 +34,4 @@ $("#container").sliphover();
 
 That's all! 
 
-For more details and live demos see here.
+For more details and live demos see [here](http://wayou.github.io/SlipHover/).
