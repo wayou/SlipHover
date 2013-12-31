@@ -15,7 +15,18 @@ Quick Start
 ```
 
 2. Simply select the container element you want to apply to. The target can be any element.
+say we have the following HTML structure:
+
+```html
+<div id="container">
+  <img src="1.jpg" title="title1" />
+  <img src="2.jpg" title="title2" />
+  ...
+</div>
+```
+
+then we simply apply effect to the container.
 
 ```javascript
-$("#wrapper").sliphover();
+$("#container").sliphover();
 ```
