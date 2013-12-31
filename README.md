@@ -1,13 +1,13 @@
 SlipHover
 =========
 
-Apply direction aware hover animation to images or other elements
+Apply direction aware hover animation to images or any other elements
 
 
 Quick Start
 ---
 
-1.Just like using other jQuery plugins, first include the jQuery and the plugin js file to your page
+1. Just like using other jQuery plugins, first include the jQuery and the plugin js file to your page
 
 ```html
 <script src="path/to/jquery.min.js"></script>
@@ -15,7 +15,8 @@ Quick Start
 ```
 
 2. Simply select the container element you want to apply to. The target can be any element.
-say we have the following HTML structure:
+
+Say we have the following HTML structure:
 
 ```html
 <div id="container">
@@ -30,3 +31,7 @@ then we simply apply effect to the container.
 ```javascript
 $("#container").sliphover();
 ```
+
+That's all! 
+
+For more details and live demos see here.
