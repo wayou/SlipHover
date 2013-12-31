@@ -19,14 +19,7 @@
     var SlipHover=function(element,options){
 
     	this.$element=element,
-    	this.options=$.extend({},this.defaults,options),
-    	this._overlayStyles={
-			normalStyle:{'left':'0','top':'0'},
-			topStyle:{'left':'0','top':'-100%'},
-			rightStyle:{'left':'100%','top':'0'},
-			bottomStyle:{'left':'0','top':'100%'},
-			leftStyle:{'left':'-100%','top':'0'}
-		};
+    	this.options=$.extend({},this.defaults,options)
 	};
 
 	SlipHover.prototype={
@@ -39,6 +32,13 @@
 			reverse:false,
 			delay:0,
 			textMode:'auto'//specify how the overlay behavor when the text is too long that overflow, possible options are 'scroll' and 'auto'
+		},
+		_overlayStyles:{
+			normalStyle:{'left':'0','top':'0'},
+			topStyle:{'left':'0','top':'-100%'},
+			rightStyle:{'left':'100%','top':'0'},
+			bottomStyle:{'left':'0','top':'100%'},
+			leftStyle:{'left':'-100%','top':'0'}
 		},
 		_ini:function(element,options){//the underscore indicates this is a private method
 
