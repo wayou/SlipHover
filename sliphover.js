@@ -53,7 +53,8 @@
 
 				var $container=that._createContainer($(this)),
 					$overlay=that._createOverlay($container,options,$(this)),
-					contentHeight=$overlay.children().height(),
+					$innerContainer=$overlay.children(),
+					contentHeight=$innerContainer.height(),
 					overlayHeight=$overlay.height();
 
 				that._listenEvent($container,$overlay,options);
@@ -68,7 +69,7 @@
 					speed=(contentHeight-overlayHeight)*that.options.scrollSpeed;
 
 					$overlay.hover(function(){
-							that._alternateScroll($overlay.children(),scrollTop,scrollBottom,speed);
+							that._alternateScroll($innerContainer,scrollTop,scrollBottom,speed);
 						},function(){
 							$overlay.children().stop().css('top','0');
 						})
@@ -97,13 +98,14 @@
 		_createOverlay:function($container,options,$target){
 			var $overlay=$('<div class="sliphoverItemTitle" style="width:100%;height:'+this.options.height+';box-sizing:border-box;-moz-box-sizing:border-box;padding:5px;overflow:auto;position:absolute;color:'+this.options.fontColor+';background-color:'+this.options.backgroundColor+';">')
 			.html('<div style="position:relative;width:100%;">'+$target.attr(options.title)+'</div>')
-			.css(this._overlayStyles.leftStyle);
+			.css(this._overlayStyles.leftStyle),
+				$innerContainer=$overlay.children();
+
 			 $container.html($overlay);
 
 			 //if the content's height is less that the overlay, set the content vertical align middle
-			if ($overlay.children().height()<$overlay.height()) {
-				$overlay.children().css({width:$overlay.children().width(),height:$overlay.height()});
-				$overlay.children().css({'display':'table-cell','vertical-align':'middle','text-align':'center'});
+			if ($innerContainer.height()<$overlay.height()) {
+				$innerContainer.css({'width':$innerContainer.width(),'height':$overlay.height(),'display':'table-cell','vertical-align':'middle','text-align':'center'});
 			};
 			
 			 return $overlay;
