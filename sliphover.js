@@ -93,10 +93,10 @@
 			targetHeight=$target.innerHeight(),
 			borderWidth=($target.outerWidth()-$target.innerWidth())/2;
 
-			return $('<div class="sliphoverItem" style="width:'+targetWidth+'px;height:'+targetHeight+'px;text-align:center;overflow:hidden;position:absolute;top:'+(targetOffset.top+borderWidth)+'px;left:'+(targetOffset.left+borderWidth)+'px;">').insertBefore($target);
+			return $('<div class="sliphoveritem" style="width:'+targetWidth+'px;height:'+targetHeight+'px;text-align:center;overflow:hidden;position:absolute;top:'+(targetOffset.top+borderWidth)+'px;left:'+(targetOffset.left+borderWidth)+'px;">').insertBefore($target);
 		},
 		_createOverlay:function($container,options,$target){
-			var $overlay=$('<div class="sliphoverItemTitle" style="width:100%;height:'+this.options.height+';box-sizing:border-box;-moz-box-sizing:border-box;padding:5px;overflow:auto;position:absolute;color:'+this.options.fontColor+';background-color:'+this.options.backgroundColor+';">')
+			var $overlay=$('<div class="sliphoveritemTitle" style="width:100%;height:'+this.options.height+';box-sizing:border-box;-moz-box-sizing:border-box;padding:5px;overflow:auto;position:absolute;color:'+this.options.fontColor+';background-color:'+this.options.backgroundColor+';">')
 			.html('<div style="position:relative;width:100%;">'+$target.attr(options.title)+'</div>')
 			.css(this._overlayStyles.leftStyle),
 				$innerContainer=$overlay.children();
@@ -199,7 +199,7 @@
 
 		//handle the window resize event for it will destroy the layout
 		$( window ).unbind('resize.sliphover').bind('resize.sliphover',function() {
-			$('.sliphoverItem').remove();
+			$('.sliphoveritem').remove();
 			entry._ini();
 		});
 
