@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>SlipHover by Wayou</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>SlipHover</h1>
+        <p>Apply direction aware hover animation to images</p>
+
+        <p class="view"><a href="https://github.com/Wayou/SlipHover">View the Project on GitHub <small>Wayou/SlipHover</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Wayou/SlipHover/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Wayou/SlipHover/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Wayou/SlipHover">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="sliphover" class="anchor" href="#sliphover"><span class="octicon octicon-link"></span></a>SlipHover</h1>
+
+<p>Apply direction aware hover animation to images or any other elements</p>
+
+<p>Go <a href="http://wayou.github.io/SlipHover/">here</a> for more details;
+and see live demos <a href="http://wayou.github.io/SlipHover/demos/index.html">here</a>.</p>
+
+<h2>
+<a name="quick-start" class="anchor" href="#quick-start"><span class="octicon octicon-link"></span></a>Quick Start</h2>
+
+<p>1.Just like using other jQuery plugins, first include the jQuery and the plugin js file to your page.</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"path/to/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"path/to/sliphover.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>2.Simply select the container element you want to apply to. The target can be any element.</p>
+
+<p>Say we have the following HTML structure, by default, the 'title' attribute of the image element will be displayed when hover:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"1.jpg"</span> <span class="na">title=</span><span class="s">"title1"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"2.jpg"</span> <span class="na">title=</span><span class="s">"title2"</span> <span class="nt">/&gt;</span>
+  ...
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<p>then we simply apply effect to the container.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">"#container"</span><span class="p">).</span><span class="nx">sliphover</span><span class="p">();</span>
+</pre></div>
+
+<p>That's all! </p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Wayou">Wayou</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-46794744-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
