@@ -8,7 +8,7 @@ body{
 ::selection{
 	background: rgba(65,131,196,0.4);
 }
-a{
+h1 a{
 	text-decoration:none;
 	color: #000;
 }
