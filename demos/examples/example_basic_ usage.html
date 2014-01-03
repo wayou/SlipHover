@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="SliipHover | direction aware hover animation">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SliipHover | direction aware hover effect basic usage example</title>
+        <link rel="stylesheet" href="../style/style.css">
+    	<link rel="stylesheet" type="text/css" href="../style/sunburst.min.css">
+    </head>
+    <body>
+   <div id="wrapper">
+   	  <header>
+        <h1><a href="#">SlipHover</a></h1>
+          <div class="sharebtns">
+          <span class='st_googleplus_hcount' displayText='Google +'></span>
+          <span class='st_twitter_hcount' displayText='Tweet'></span>
+         </div>
+        <p>Apply direction aware hover animation to images</p>
+        <section class="headerbtns">
+           <iframe src="http://ghbtns.com/github-btn.html?user=wayou&repo=SlipHover&type=watch&count=true&size=large"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+                <ul class="gtdownload">
+                  <li >
+                    <span class="github-btn github-watchers github-btn-large">
+                      <a class="gh-btn" href="https://github.com/Wayou/SlipHover/zipball/master">
+                        <span class="gh-ico"></span>
+                        <span class="gh-text">ZIP File</span>
+                      </a>
+                    </span>
+                  </li>
+                   <li >
+                    <span class="github-btn github-watchers github-btn-large">
+                      <a class="gh-btn" href="https://github.com/Wayou/SlipHover/tarball/master">
+                        <span class="gh-ico"></span>
+                        <span class="gh-text">TAR Ball</span>
+                      </a>
+                    </span>
+                  </li>
+                </ul>
+        </section>
+      </header>
+      <hr>
+   	<section class="example">
+   		<h1 class="section_title">Basic Usage</h1>
+		<div id="container">
+			<ul>
+          <li>
+            <a href="http://wayou.github.io/SlipHover/">
+              <img src="../img/1.jpg" alt="image 1" title="Loyal Cao">
+            </a>
+          </li>
+           <li>
+            <a href="http://wayou.github.io/SlipHover/">
+              <img src="../img/2.jpg" alt="image 2" title="Beautyful girl's selfie in the p!nk">
+            </a>
+          </li>
+           <li>
+            <a href="http://wayou.github.io/SlipHover/">
+              <img src="../img/3.jpg" alt="image 3" title="Short hair style">
+            </a>
+          </li>
+           <li>
+            <a href="http://wayou.github.io/SlipHover/">
+              <img src="../img/4.jpg" alt="image 4" title="Elly Tran Ha">
+            </a>
+          </li>
+           <li>
+            <a href="http://wayou.github.io/SlipHover/">
+              <img src="../img/5.jpg" alt="image 5" title="Yoga girl">
+            </a>
+          </li>
+           <li>
+            <a href="http://wayou.github.io/SlipHover/">
+              <img src="../img/6.jpg" alt="image 6" title="Library girl">
+            </a>
+          </li>
+           <li>
+            <a href="http://wayou.github.io/SlipHover/">
+              <img src="../img/7.jpg" alt="image 7" title="Kitchen woman">
+            </a>
+          </li>
+           <li>
+            <a href="http://wayou.github.io/SlipHover/">
+              <img src="../img/8.jpg" alt="image 8" title="Cartoon girl">
+            </a>
+          </li> 
+           <li>
+            <a href="http://wayou.github.io/SlipHover/">
+              <img src="../img/9.gif" alt="image 9" title="Cutie rolling cube">
+            </a>
+          </li>
+			</ul>
+		</div>
+   	</section>
+   	<section class="content_block">
+   		<p>HTML:</p>
+<pre class="prettyprint">
+&lt;div id=&quot;container&quot;&gt;
+ &lt;ul&gt;
+  &lt;li&gt;
+   &lt;a href=&quot;http://wayou.github.io/SlipHover/&quot;&gt;
+    &lt;img src=&quot;../img/1.jpg&quot; title=&quot;Loyal Cao&quot; &gt;
+   &lt;/a&gt;
+  &lt;/li&gt;
+  ...
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+<p>JavaScript</p>
+<pre class="prettyprint">
+$('#container').sliphover();
+</pre>
+   	</section>
+   	 <footer>
+        <ul>
+            <li>
+              <a href="https://github.com/wayou/SlipHover/"><small>View on GitHub</small></a>
+            </li>
+            <li>
+              <a href="mailto:liuwayong@gmail.com"><small>Contact</small></a>
+            </li>
+        </ul>
+      </footer>
+   </div>
+	
+        <!--[if lt IE 9]>
+	    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/jquery.sliphover.min.js"></script>
+    	<script src="../js/prettify.js"></script>
+		<script type="text/javascript">
+		    $(function(){
+		        $('#container').sliphover();
+		    	//code highlight
+		        prettyPrint();
+		      })
+		</script>
+		  <!-- share buttons -->
+    	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+		<script type="text/javascript">stLight.options({publisher: "4882333a-7dc2-433e-bb4b-0684f6e9a941", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+    </body>
+</html>

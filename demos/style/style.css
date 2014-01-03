@@ -1,24 +1,209 @@
-body{
-	background-color: #ddd;
-	margin: 0;
+html{
 	font-family: arial;
 }
+body{
+	margin: 0;
+	background-color: #ddd;
+}
+::selection{
+	background: rgba(65,131,196,0.4);
+}
+h1 a{
+	text-decoration:none;
+	color: #000;
+}
+p{
+    margin: 2px;
+}
+.headerbtns{
+    margin-top: 8px;
+}
+header h1{
+    display: inline-block;
+}
+.sharebtns{
+    display: inline-block;
+    float: right;
+}
 #wrapper{
-	width: 800px;
-	margin: 0 auto;
-	
+	width: 80%;
+	margin:0 auto;
+	padding:1px 20px;
 	background-color: #fff;
-	padding: 5px;
 }
-li{
-	list-style: none;
-	overflow: hidden;
+@media only screen and (max-width : 800px) {
+	#wrapper{
+		width: 100%;
+        padding: 10px;
+		box-sizing: border-box;
+	}
+}
+@media only screen and (max-width : 480px) {
+	#wrapper{
+		width: 100%;
+        padding: 5px;
+		box-sizing: border-box;
+	}
+	pre.prettyprint {
+		width: 100%!important;
+		box-sizing: border-box;
+	}
+	header ul.gtdownload{
+		display: none;
+	}
+}
+header iframe:{
 	display: inline-block;
-	 border: 2px solid #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
 }
-img{
-	width: 190px;
-	height: 190px;
+header ul{
+	margin: 0;
+	padding:0;
+	display: inline-block;
+	float: right;
 }
+header li,footer li{
+	list-style: none;
+	display: inline-block;
+}
+.section_title{
+    margin-bottom: 0;
+}
+.section_title:hover a:after{
+   content: url('../img/icon/top.png');
+}
+.section_title .back_btn{
+    float: right;
+}
+.section_title .back_btn img{
+    width: 16px;
+    height: 16px;
+}
+table.options_table{
+    border-collapse: collapse;
+}
+table.options_table th{
+    background-color: #f9f9f9;
+}
+table.options_table td,table.options_table th{
+    border: 1px solid #EDEDED;
+    padding: 5px;
+}
+
+footer{
+	text-align: center;
+}
+
+#demo_container{
+    width: 600px;
+    margin: 0 auto;
+}
+/*example pages*/
+#container{
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+#demo_container li,#container li{
+    list-style: none;
+    display: inline-block;
+}
+#demo_container img,#container img,#container .block_item{
+    width: 150px;
+    height: 150px;
+}
+
+/*github style button*/
+.github-btn {
+    height: 20px;
+    overflow: hidden
+}
+
+.gh-btn,.gh-ico {
+    float: left
+}
+
+.gh-btn {
+    padding: 2px 5px 2px 4px;
+    color: #555;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: 3px
+}
+
+.gh-btn {
+    background-color: #e6e6e6;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fafafa),to(#eaeaea));
+    background-image: -webkit-linear-gradient(#fafafa,#eaeaea);
+    background-image: -moz-linear-gradient(top,#fafafa,#eaeaea);
+    background-image: -ms-linear-gradient(#fafafa,#eaeaea);
+    background-image: -o-linear-gradient(#fafafa,#eaeaea);
+    background-image: linear-gradient(#fafafa,#eaeaea);
+    background-repeat: no-repeat;
+    border: 1px solid #d4d4d4;
+    border-bottom-color: #bcbcbc
+}
+
+.gh-btn:hover,.gh-btn:focus,.gh-btn:active {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    border-color: #518cc6 #518cc6 #2a65a0;
+    background-color: #3072b3
+}
+
+.gh-btn:hover,.gh-btn:focus {
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#599bdc),to(#3072b3));
+    background-image: -webkit-linear-gradient(#599bdc,#3072b3);
+    background-image: -moz-linear-gradient(top,#599bdc,#3072b3);
+    background-image: -ms-linear-gradient(#599bdc,#3072b3);
+    background-image: -o-linear-gradient(#599bdc,#3072b3);
+    background-image: linear-gradient(#599bdc,#3072b3)
+}
+
+.gh-btn:active {
+    background-image: none;
+    -webkit-box-shadow: inset 0 2px 5px rgba(0,0,0,.10);
+    -moz-box-shadow: inset 0 2px 5px rgba(0,0,0,.10);
+    box-shadow: inset 0 2px 5px rgba(0,0,0,.10)
+}
+
+.gh-ico {
+    width: 14px;
+    height: 15px;
+    margin-top: -1px;
+    margin-right: 4px;
+    vertical-align: middle;
+    background-image: url(../img/icon/icon_download.png);
+    background-repeat: no-repeat;
+    background-position: 0 0
+}
+
+.gh-btn:hover .gh-ico,.gh-btn:focus .gh-ico,.gh-btn:active .gh-ico {
+    background-position: -25px 0
+}
+
+
+.github-btn-large {
+    height: 30px
+}
+
+.github-btn-large .gh-btn {
+    padding: 3px 10px 3px 8px;
+    font-size: 16px;
+    line-height: 22px;
+    border-radius: 4px
+}
+
+.github-btn-large .gh-ico {
+    width: 22px;
+    height: 23px;
+    background-position: 0 0px
+}
+
+.github-btn-large .gh-btn:hover .gh-ico,.github-btn-large .gh-btn:focus .gh-ico,.github-btn-large .gh-btn:active .gh-ico {
+    background-position: 0px -22px
+}
+/*github style button end*/
 
