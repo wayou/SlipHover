@@ -36,11 +36,11 @@
 			height:'100%'//specify the height of the overlay
 		},
 		_overlayStyles:{
-			normalStyle:{'left':'0','bottom':'0'},
-			topStyle:{'left':'0','bottom':'100%'},
-			rightStyle:{'left':'100%','bottom':'0'},
-			bottomStyle:{'left':'0','bottom':'-100%'},
-			leftStyle:{'left':'-100%','bottom':'0'}
+			normalStyle:{'left':'0','top':'0'},
+			topStyle:{'left':'0','top':'-100%'},
+			rightStyle:{'left':'100%','top':'0'},
+			bottomStyle:{'left':'0','top':'100%'},
+			leftStyle:{'left':'-100%','top':'0'}
 		},
 		_ini:function(element,options){//the underscore indicates this is a private method
 
