@@ -31,8 +31,8 @@
 			backgroundColor:'rgba(0,0,0,.5)',//specify the background color and opacity using rgba
 			reverse:false,
 			delay:0,
-			textMode:'autoscroll',//specify how the overlay behavor when the text is too long that overflow, possible options are 'scroll' and 'autoScroll'
-			scrollSpeed:30,//if textMode is autoScroll, this option specify the scroll speed, the smaller the fast
+			autoScroll:true,//if true, the overflowed long text of the overlay will auto scrolling up and down when hover
+			scrollSpeed:30,//if autoScroll is true, this option specify the scroll speed, the smaller the fast
 			height:'100%'//specify the height of the overlay
 		},
 		_overlayStyles:{
@@ -59,8 +59,8 @@
 
 				that._listenEvent($container,$overlay,options);
 
-				//if the text is overflow and the textMode options is set to 'autoScroll' then auto scroll
-				if (that.options.textMode.toLowerCase()==='autoscroll'&&contentHeight-overlayHeight>0) {
+				//if the text is overflow and the autoScroll options is set to true then auto scroll
+				if (that.options.autoScroll&&contentHeight-overlayHeight>0) {
 
 					$overlay.css('overflow','hidden');
 
