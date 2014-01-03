@@ -12,21 +12,36 @@ h1 a{
 	text-decoration:none;
 	color: #000;
 }
+p{
+    margin: 2px;
+}
+.headerbtns{
+    margin-top: 8px;
+}
+header h1{
+    display: inline-block;
+}
+.sharebtns{
+    display: inline-block;
+    float: right;
+}
 #wrapper{
 	width: 80%;
 	margin:0 auto;
-	padding: 5px;
+	padding:1px 20px;
 	background-color: #fff;
 }
 @media only screen and (max-width : 800px) {
 	#wrapper{
 		width: 100%;
+        padding: 10px;
 		box-sizing: border-box;
 	}
 }
 @media only screen and (max-width : 480px) {
 	#wrapper{
 		width: 100%;
+        padding: 5px;
 		box-sizing: border-box;
 	}
 	pre.prettyprint {
@@ -46,14 +61,56 @@ header ul{
 	display: inline-block;
 	float: right;
 }
-header li{
+header li,footer li{
 	list-style: none;
 	display: inline-block;
 }
+.section_title{
+    margin-bottom: 0;
+}
+.section_title:hover a:after{
+   content: url('../img/icon/top.png');
+}
+.section_title .back_btn{
+    float: right;
+}
+.section_title .back_btn img{
+    width: 16px;
+    height: 16px;
+}
+table.options_table{
+    border-collapse: collapse;
+}
+table.options_table th{
+    background-color: #f9f9f9;
+}
+table.options_table td,table.options_table th{
+    border: 1px solid #EDEDED;
+    padding: 5px;
+}
+
 footer{
 	text-align: center;
 }
 
+#demo_container{
+    width: 600px;
+    margin: 0 auto;
+}
+/*example pages*/
+#container{
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+#demo_container li,#container li{
+    list-style: none;
+    display: inline-block;
+}
+#demo_container img,#container img,#container .block_item{
+    width: 150px;
+    height: 150px;
+}
 
 /*github style button*/
 .github-btn {
