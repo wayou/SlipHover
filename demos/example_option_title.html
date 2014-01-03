@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="description" content="SliipHover | direction aware hover animation">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SliipHover | target option example</title>
+        <title>SliipHover | direction aware hover effect title option example</title>
         <link rel="stylesheet" href="../style/style.css">
     	<link rel="stylesheet" type="text/css" href="../style/sunburst.min.css">
     </head>
@@ -48,12 +48,13 @@
        <label for="useTitle">use 'title' attribute</label>
       <input type="radio" value='1' name="titleType" id="useAlt" />
        <label for="useAlt">use 'alt' attribute</label>
+       <p>You can put html code in the attribute.</p>
     </div>
 		<div id="container">
 			<ul>
 			    <li>
 			    	<a href="http://wayou.github.io/SlipHover/">
-			    		<img src="../img/1.jpg" alt="image 1" title="Loyal Cao">
+			    		<img src="../img/1.jpg" alt="image 1 <a href='http://www.google.com' style='color:gray;'>html is accepted</a>" title="<p>Loyal Cao </p><a href='http://www.google.com' style='color:gray;'>html is accepted</a>">
 			    	</a>
 			    </li>
 			     <li>
@@ -107,7 +108,7 @@
  &lt;ul&gt;
   &lt;li&gt;
    &lt;a href=&quot;http://wayou.github.io/SlipHover/&quot;&gt;
-    &lt;img src=&quot;../img/1.jpg&quot; title=&quot;Loyal Cao&quot; alt=&quot;image 1&quot; &gt;
+    &lt;img src=&quot;../img/1.jpg&quot; title=&quot;&lt;p&gt;Loyal Cao&lt;/p&gt; &lt;a href='http://www.google.com' style='color:gray;'&gt;html is accepted&lt;/a&gt;&quot; alt=&quot;&lt;p&gt;image 1&lt;/p&gt; &lt;a href='http://www.google.com' style='color:gray;'&gt;html is accepted&lt;/a&gt;&quot; &gt;
    &lt;/a&gt;
   &lt;/li&gt;
   ...

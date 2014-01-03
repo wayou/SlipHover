@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="description" content="SliipHover | direction aware hover animation">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SliipHover | target option example</title>
+        <title>SliipHover | direction aware hover effect auto scroll option example</title>
         <link rel="stylesheet" href="../style/style.css">
     	<link rel="stylesheet" type="text/css" href="../style/sunburst.min.css">
     </head>
@@ -113,7 +113,10 @@
 &lt;/div&gt;</pre>
 <p>JavaScript</p>
 <pre class="prettyprint">
-$('#container').sliphover();
+$('#container').sliphover({
+  autoScroll:true,//default is true
+  scrollSpeed:'slow'//or number, the samller the faster
+});
 </pre>
    	</section>
    	 <footer>
@@ -158,9 +161,8 @@ $('#container').sliphover();
               });
 
              $("#run").click(function(){
-               var autoScroll=$('#duration').is(':checked'),
+               var autoScroll=$('#autoScroll').is(':checked'),
                 speed=$('#scrollSpeed').val();
-                console.log(autoScroll);
                   $('#container').sliphover({
                       autoScroll:autoScroll,
                       scrollSpeed:speed

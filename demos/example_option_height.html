@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="description" content="SliipHover | direction aware hover animation">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SliipHover | direction aware hover effect duration option example</title>
+        <title>SliipHover | direction aware hover effect height option example</title>
         <link rel="stylesheet" href="../style/style.css">
     	<link rel="stylesheet" type="text/css" href="../style/sunburst.min.css">
     </head>
@@ -42,9 +42,9 @@
       </header>
       <hr>
    	<section class="example">
-   		<h1 class="section_title">Example: duration option</h1>
+   		<h1 class="section_title">Example: height option</h1>
       <div>
-        <input type="number" placeholder="600" id="duration">
+        <input type="number" placeholder="50" id="height">%
         <input type="button" value="Run" style="width:50px;" id="run">
       </div>
 		<div id="container">
@@ -113,7 +113,7 @@
 <p>JavaScript</p>
 <pre class="prettyprint">
 $('#container').sliphover({
-  duration:'slow'//'fast' or number (in milliseconds)
+  height:'50%'//percentage number only
 });
 </pre>
    	</section>
@@ -158,15 +158,15 @@ $('#container').sliphover({
               });
 
 		        $('#container').sliphover({
-              duration:'slow'
+              height:'50%'
             });
 
             $("#run").click(function(){
-               var input=$('#duration').val(),
+               var input=$('#height').val(),
               number=parseInt(input);
               if (number) {
                  $('#container').sliphover({
-                    duration:number
+                    height:number+'%'
                   });
               };
             })
