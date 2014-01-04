@@ -5,7 +5,7 @@ Apply direction aware hover animation to images or any other elements
 
 Go [here](http://wayou.github.io/SlipHover/) for more details and see live demos.
 
-For IE, only works on IE9+.
+For IE, only works on IE9+, for IE8 doesn't support rgba background color.
 
 Quick Start
 ---
