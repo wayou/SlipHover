@@ -91,9 +91,14 @@
 			var targetOffset=$target.offset(),
 			targetWidth=$target.innerWidth(),
 			targetHeight=$target.innerHeight(),
-			borderWidth=($target.outerWidth()-$target.innerWidth())/2;
-
-			return $('<div class="sliphoveritem" style="width:'+targetWidth+'px;height:'+targetHeight+'px;text-align:center;overflow:hidden;position:absolute;top:'+(targetOffset.top+borderWidth)+'px;left:'+(targetOffset.left+borderWidth)+'px;">').insertBefore($target);
+			borderWidth=($target.outerWidth()-$target.innerWidth())/2,
+			$container=$('<div class="sliphoveritem" style="width:'+targetWidth+'px;height:'+targetHeight+'px;text-align:center;overflow:hidden;position:absolute;top:'+(targetOffset.top+borderWidth)+'px;left:'+(targetOffset.left+borderWidth)+'px;">').insertBefore($target);
+			//fix for IE10,IE9,IE8
+			var browser=this._detectBrowser();
+			if (browser.isIE&&browser.version<=10) {
+				$container.css('background-color','rgba(255,255,255,0.1)');
+			};
+			return $container;
 		},
 		_createOverlay:function($container,options,$target){
 			var $overlay=$('<div class="sliphoveritemTitle" style="width:100%;height:'+this.options.height+';box-sizing:border-box;-moz-box-sizing:border-box;padding:5px;overflow:auto;position:absolute;color:'+this.options.fontColor+';background-color:'+this.options.backgroundColor+';">')
@@ -124,9 +129,10 @@
 
 		},
 		_listenEvent:function($target,$overlay,options){
+			
 			var that=this;
-			$target.unbind('mouseenter.sliphover mouseleave.sliphover').bind('mouseenter.sliphover mouseleave.sliphover',function(e){
 
+			$target.unbind('mouseenter.sliphover mouseleave.sliphover').bind('mouseenter.sliphover mouseleave.sliphover',function(e){
 				var eventType=e.type,
 				    direction=that._getDirection($target,e);
 				that._applyAnimation(eventType,direction,$overlay,options,that._overlayStyles);
@@ -180,6 +186,19 @@
 			 default:
 			 	throw new Error('failed to get the direction.');
 			}
+		},
+		_detectBrowser:function(){
+			//http://stackoverflow.com/questions/19562207/jquery-detect-browser-ie9-and-below-and-throw-up-a-modal-to-upgrade
+			 var version = 999,
+			 isIE=false;
+            if (navigator.appVersion.indexOf("MSIE") != -1){
+            	isIE=true;
+                version = parseFloat(navigator.appVersion.split("MSIE")[1]);
+            }
+            return {
+            	isIE:isIE,
+            	version:version
+            };
 		}
 	};
 
