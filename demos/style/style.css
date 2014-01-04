@@ -99,7 +99,7 @@ footer{
 }
 /*example pages*/
 #container{
-    width: 500px;
+    width: 600px;
     margin: 0 auto;
     text-align: center;
 }
@@ -110,6 +110,9 @@ footer{
 #demo_container img,#container img,#container .block_item{
     width: 150px;
     height: 150px;
+
+    border: 1px solid #09c;
+    box-shadow: 0 0 2px rgba(0, 200, 204, 0.7);
 }
 
 /*github style button*/
