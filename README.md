@@ -19,7 +19,7 @@ Quick Start
 
 2.Simply select the container element you want to apply to. The target can be any element.
 
-Say we have the following HTML structure, by default, the 'title' attribute of the image element will be displayed when hover:
+Say we have the following HTML structure, by default,the plugin will look for images and the 'title' attribute of the image element will be displayed when hover:
 
 ```html
 <div id="container">
