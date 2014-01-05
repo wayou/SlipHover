@@ -14,7 +14,7 @@ Quick Start
 
 ```html
 <script src="path/to/jquery.min.js"></script>
-<script src="path/to/sliphover.js"></script>
+<script src="path/to/sliphover.min.js"></script>
 ```
 
 2.Simply select the container element you want to apply to. The target can be any element.
