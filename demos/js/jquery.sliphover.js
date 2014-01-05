@@ -1,5 +1,5 @@
 /*
-* jquery sliphover 1.0
+* jquery sliphover 1.0.1
 * A hover effect with direction aware jQuery plugin inspired by
 * http://tympanus.net/TipsTricks/DirectionAwareHoverEffect/index2.html
 *
@@ -32,7 +32,7 @@
 			reverse:false,
 			delay:0,
 			autoScroll:true,//if true, the overflowed long text of the overlay will auto scrolling up and down when hover
-			scrollSpeed:30,//if autoScroll is true, this option specify the scroll speed, the smaller the fast
+			scrollSpeed:40,//if autoScroll is true, this option specify the scroll speed, the smaller the fast
 			height:'100%'//specify the height of the overlay
 		},
 		_overlayStyles:{
