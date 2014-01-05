@@ -1,5 +1,5 @@
 /*
-* jquery sliphover 1.0.0
+* jquery sliphover 1.0.1
 * A hover effect with direction aware jQuery plugin inspired by
 * http://tympanus.net/TipsTricks/DirectionAwareHoverEffect/index2.html
 *
