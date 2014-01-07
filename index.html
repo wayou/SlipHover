@@ -117,7 +117,6 @@
   &ltimg src="2.jpg" title="title2" /&gt
   ...
 &lt/div&gt</pre>
-        <p>Then use jQuery to select the container then apply the plugin:</p>
         <pre  class="prettyprint">$("#container").sliphover();</pre>
 
       </section>
@@ -141,8 +140,8 @@
                The height of the overlay.
               </p>
                <ul>
-                  <li>Default:'100%'</li>
-                  <li>Options: percentage value string only. '50%','30%', etc.</li>
+                  <li>Default: <span class="code">'100%'</span></li>
+                  <li>Options: percentage value string only. <psan class="code">'50%'</psan> , <span class="code">'30%'</span>, etc.</li>
               </ul>
             </td>
             <td>
@@ -156,8 +155,8 @@
               Specify witch element the animation will aplly on.
               </p>
                <ul>
-                  <li>Default: 'img'</li>
-                  <li>Options: any element you want. 'div','.class_name',etc. If using class name the dot before the class name is needed: '.class_name'.</li>
+                  <li>Default: <span class="code">'img'</span></li>
+                  <li>Options: any element you want. <span class="code">'div'</span>, <span class="code">'.class_name'</span>,etc. If using class name the dot before the class name is needed: <span class="code">'.class_name'</span>.</li>
               </ul>
             </td>
             <td>
@@ -170,8 +169,8 @@
               <p>The content that will be displayed in the overlay when hover. To show text you need to specify the title attribute of the target element, you can also place html code within the title attribute and it will show properly.</p>
               <p>To style the text, you can write you own css rules when assign the content of the 'title' attribute.</p>
               <ul>
-                  <li>Default: 'title'</li>
-                  <li>Options: 'title','alt','your-custom-hmtl5-data-attribute'</li>
+                  <li>Default: <span class="code">'title'</span></li>
+                  <li>Options: <span class="code">'title'</span>, <span class="code">'alt'</span>, <span class="code">'your-custom-hmtl5-data-attribute'</span></li>
               </ul>
             </td>
             <td>
@@ -185,8 +184,8 @@
                 The duration of the animation.
               </p>
                <ul>
-                  <li>Default:'fast'</li>
-                  <li>Options: 'fast', 'slow', or a nunmber (milliseconds)</li>
+                  <li>Default: <span class="code">'fast'</span></li>
+                  <li>Options: <span class="code">'fast'</span>, <span class="code">'slow'</span>, or a nunmber (milliseconds)</li>
               </ul>
             </td>
             <td>
@@ -200,8 +199,8 @@
                 The color of the text in the overlay.
               </p>
                <ul>
-                  <li>Default:'#fff'</li>
-                  <li>Options: any valid CSS color syntax. '#9c9c9c' , 'rgb(255,0,0)', 'red', etc.</li>
+                  <li>Default: <span class="code">'#fff'</span></li>
+                  <li>Options: any valid CSS color syntax. <span class="code">'#9c9c9c'</span> , <span class="code">'rgb(255,0,0)'</span>, <span class="code">'red'</span>, etc.</li>
               </ul>
             </td>
             <td>
@@ -215,8 +214,8 @@
                 The color of the overlay.
               </p>
                <ul>
-                  <li>Default: 'rgba(0,0,0,.5)'</li>
-                  <li>Options:  any valid CSS color syntax. '#9c9c9c' , 'rgb(255,0,0)', 'red', etc. If you wanna the overlay be transparent then use rgba color type to specify the opacity: 'rgba(0,255,0,0.3)' here the 0.3 is the opacity.</li>
+                  <li>Default: <span class="code">'rgba(0,0,0,.5)'</span></li>
+                  <li>Options: any valid CSS color syntax. <span class="code">'#9c9c9c'</span> , <span class="code">'rgb(255,0,0)'</span>, <span class="code">'red'</span>, etc. If you wanna the overlay be transparent then use rgba color type to specify the opacity: <span class="code">'rgba(0,255,0,0.3)'</span> here the 0.3 is the opacity.</li>
               </ul>
             </td>
             <td>
@@ -230,8 +229,8 @@
                 Reverse the animation.
               </p>
                <ul>
-                  <li>Default:false</li>
-                  <li>Options: false, true.</li>
+                  <li>Default: <span class="code">false</span></li>
+                  <li>Options: <span class="code">false</span>, <span class="code">true</span>.</li>
               </ul>
             </td>
             <td>
@@ -245,8 +244,8 @@
                 If true, when the text of the overlay is too long and overflowed, it will auto scrolling up and down when hover oh it.
               </p>
                <ul>
-                  <li>Default:true</li>
-                  <li>Options:  true, false. If set to false, there will be a vertical scroll bar.</li>
+                  <li>Default: <span class="code">true</span></li>
+                  <li>Options: <span class="code">true</span>, <span class="code">false</span>. If set to <span class="code">false</span>, there will be a vertical scroll bar.</li>
               </ul>
             </td>
             <td>
@@ -257,10 +256,10 @@
             <td>scrollSpeed</td>
              <td>
                 <p>
-                How fast the overlay text will scroll animated when the overlay text is overflow and the 'textMode' is 'autoScroll'.
+                How fast the overlay text will scroll animated when the overlay text is overflow and the <span class="code">'autoScroll'</span> is <span class="code">true</span>.
               </p>
                <ul>
-                  <li>Default:Default:40</li>
+                  <li>Default: <span class="code">40</span></li>
                   <li>Options: plain number. the samller the faster.</li>
               </ul>
             </td>
