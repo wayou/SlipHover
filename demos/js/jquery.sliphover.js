@@ -31,7 +31,7 @@
 			fontColor:'#ffffff',
 			backgroundColor:'rgba(0,0,0,.5)',//specify the background color and opacity using rgba
 			reverse:false,
-			flip:false,//true to enable the 3d flip animation. for IE only works on IE10+
+			flip:false,//enable the 3d flip animation. for IE only works on IE10+
 			autoScroll:true,//if true, the overflowed long text of the overlay will auto scrolling up and down when hover
 			scrollSpeed:40,//if autoScroll is true, this option specify the scroll speed, the smaller the fast
 			height:'100%'//specify the height of the overlay
