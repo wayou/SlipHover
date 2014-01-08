@@ -2,6 +2,7 @@
 * jquery sliphover 1.0.1
 * A hover effect with direction aware jQuery plugin inspired by
 * http://tympanus.net/TipsTricks/DirectionAwareHoverEffect/index2.html
+* and the 3d flip animation inspired by http://codepen.io/taufnrsyd/pen/ufcdG
 *
 * Author:Wayou
 *
@@ -30,7 +31,7 @@
 			fontColor:'#ffffff',
 			backgroundColor:'rgba(0,0,0,.5)',//specify the background color and opacity using rgba
 			reverse:false,
-			delay:0,
+			flip:false,//true to enable the 3d flip animation. for IE only works on IE10+
 			autoScroll:true,//if true, the overflowed long text of the overlay will auto scrolling up and down when hover
 			scrollSpeed:40,//if autoScroll is true, this option specify the scroll speed, the smaller the fast
 			height:'100%'//specify the height of the overlay
@@ -40,7 +41,25 @@
 			topStyle:{'left':'0','bottom':'100%'},
 			rightStyle:{'left':'100%','bottom':'0'},
 			bottomStyle:{'left':'0','bottom':'-100%'},
-			leftStyle:{'left':'-100%','bottom':'0'}
+			leftStyle:{'left':'-100%','bottom':'0'},
+			flipStyles:{
+				_overlayFlipStyles:{
+					topFromStyle:{'transform':'rotateX(-90deg)','-webkit-transform':'rotateX(-90deg)','transform-origin':'top','-webkit-transform-origin':'top'},
+					topToStyle:{'transform':'rotateX(0deg)','-webkit-transform':'rotateX(0deg)','transform-origin':'top','-webkit-transform-origin':'top'},
+					rightFromStyle:{'transform':'rotateY(-90deg)','-webkit-transform':'rotateY(-90deg)','transform-origin':'right','-webkit-transform-origin':'right'},
+					rightToStyle:{'transform':'rotateY(0deg)','-webkit-transform':'rotateY(0deg)','transform-origin':'right','-webkit-transform-origin':'right'},
+					bottomFromStyle:{'transform':'rotateX(90deg)','-webkit-transform':'rotateX(90deg)','transform-origin':'bottom','-webkit-transform-origin':'bottom'},
+					bottomToStyle:{'transform':'rotateX(0deg)','-webkit-transform':'rotateX(0deg)','transform-origin':'bottom','-webkit-transform-origin':'bottom'},
+					leftFromStyle:{'transform':'rotateY(90deg)','-webkit-transform':'rotateY(90deg)','transform-origin':'left','-webkit-transform-origin':'left'},
+					leftToStyle:{'transform':'rotateY(0deg)','-webkit-transform':'rotateY(0deg)','transform-origin':'left','-webkit-transform-origin':'left'}
+				},
+				_containerFlipStyles:{
+					topStyle:{'perspective':'500px','perspective-origin':'50% 0%','-webkit-perspective':'500px','-webkit-perspective-origin':'50% 0%'},
+					rightStyle:{'perspective':'500px','perspective-origin':'100% 50%','-webkit-perspective':'500px','-webkit-perspective-origin':'100% 50%'},
+					bottomStyle:{'perspective':'500px','perspective-origin':'50% 100%','-webkit-perspective':'500px','-webkit-perspective-origin':'50% 100%'},
+					leftStyle:{'perspective':'500px','perspective-origin':'0% 50%','-webkit-perspective':'500px','-webkit-perspective-origin':'0% 50%'}
+				}
+			}
 		},
 		_ini:function(element,options){//the underscore indicates this is a private method
 
@@ -87,12 +106,17 @@
 				});
 		},
 		_createContainer:function($target){
-
 			var targetOffset=$target.offset(),
 			targetWidth=$target.innerWidth(),
 			targetHeight=$target.innerHeight(),
 			borderWidth=($target.outerWidth()-$target.innerWidth())/2,
 			$container=$('<div class="sliphoveritem" style="width:'+targetWidth+'px;height:'+targetHeight+'px;text-align:center;overflow:hidden;position:absolute;top:'+(targetOffset.top+borderWidth)+'px;left:'+(targetOffset.left+borderWidth)+'px;">').insertBefore($target);
+
+			//set initial style for slip mode
+			if (this.options.flip) {
+				$container.css(this._overlayStyles.flipStyles._containerFlipStyles.leftStyle);
+			};
+
 			//fix for IE10,IE9,IE8
 			var browser=this._detectBrowser();
 			if (browser.isIE&&browser.version<=10) {
@@ -101,10 +125,18 @@
 			return $container;
 		},
 		_createOverlay:function($container,options,$target){
-			var $overlay=$('<div class="sliphoveritemTitle" style="width:100%;height:'+this.options.height+';box-sizing:border-box;-moz-box-sizing:border-box;padding:5px;overflow:auto;position:absolute;color:'+this.options.fontColor+';background-color:'+this.options.backgroundColor+';">')
+			var initialStyle=this.options.flip?this._overlayStyles.flipStyles._overlayFlipStyles.leftFromStyle:this._overlayStyles.leftStyle,
+			$overlay=$('<div class="sliphoveritemTitle" style="background-color:red;width:100%;height:'+this.options.height+';box-sizing:border-box;-moz-box-sizing:border-box;padding:5px;overflow:auto;position:absolute;color:'+this.options.fontColor+';background-color:'+this.options.backgroundColor+';">')
 			.html('<div style="position:relative;width:100%;">'+$target.attr(options.title)+'</div>')
-			.css(this._overlayStyles.leftStyle),
+			.css(initialStyle),
 				$innerContainer=$overlay.children();
+
+
+			//set initial style for slip mode
+			if (this.options.flip) {
+				//$overlay.css({'bottom':'0','left':'0','transition':'transfrom '+this.options.duration+'s','-webkit-transition':'-webkit-transition '+this.options.duration+'s'});
+				$overlay.css({'bottom':'0','left':'0','transition':'transform 0.5s','-webkit-transition':'-webkit-transform 0.5s'});
+			};
 
 			 $container.html($overlay);
 
@@ -135,10 +167,10 @@
 			$target.unbind('mouseenter.sliphover mouseleave.sliphover').bind('mouseenter.sliphover mouseleave.sliphover',function(e){
 				var eventType=e.type,
 				    direction=that._getDirection($target,e);
-				that._applyAnimation(eventType,direction,$overlay,options,that._overlayStyles);
+				that._applyAnimation(eventType,direction,$target,$overlay,options,that._overlayStyles);
 			});
 		},
-		_applyAnimation:function(eventType,direction,$overlay,options,styles){
+		_applyAnimation:function(eventType,direction,$target,$overlay,options,styles){
 
 			if (options.reverse) {direction=(direction+2)%4};//this trick convert 0 to 2,1 to 3 ，vice versa to reverse the animation
 
@@ -146,40 +178,152 @@
 			 case 0:
 			  /** animations from the TOP **/
 				if (eventType=='mouseenter') {
-					$overlay.css(styles.topStyle);
-					$overlay.stop().animate(styles.normalStyle,options.duration);
+
+					if (options.flip) {
+						if ($.data($overlay,'dir')!=='top') {
+							$overlay.css('visibility','hidden');
+						    $overlay.css({'transition':'transform 50ms','-webkit-transition':'-webkit-transform 50ms'});
+						    $target.css(styles.flipStyles._containerFlipStyles.topStyle);
+						    $overlay.css(styles.flipStyles._overlayFlipStyles.topFromStyle);
+
+							$overlay.bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd',function(){
+						   		$overlay.css({'transition':'transform 0.2s','-webkit-transition':'-webkit-transform 0.2s'});
+								$overlay.css('visibility','visible');
+							   	$overlay.css(styles.flipStyles._overlayFlipStyles.topToStyle);
+							   	$overlay.unbind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
+							});
+						}else{
+							$target.css(styles.flipStyles._containerFlipStyles.topStyle);
+					    	$overlay.css(styles.flipStyles._overlayFlipStyles.topFromStyle);
+						   	$overlay.css(styles.flipStyles._overlayFlipStyles.topToStyle);
+						};
+					   
+					}else{
+						$overlay.css(styles.topStyle);
+						$overlay.stop().animate(styles.normalStyle,options.duration);
+					};
+					
 				}else{
-					$overlay.stop().animate(styles.topStyle,options.duration);
+					if (options.flip) {
+						$.data($overlay,'dir','top');
+					    $target.css(styles.flipStyles._containerFlipStyles.topStyle);
+					    $overlay.css(styles.flipStyles._overlayFlipStyles.topFromStyle);
+					}else{
+						$overlay.stop().animate(styles.topStyle,options.duration);
+					};
 				}
 
 			 break;
 			 case 1:
 			  /** animations from the RIGHT **/
 			  if (eventType=='mouseenter') {
-					$overlay.css(styles.rightStyle);
-					$overlay.stop().animate(styles.normalStyle,options.duration);
+			  		if (options.flip) {
+			  			if ($.data($overlay,'dir')!=='right') {
+								$overlay.css('visibility','hidden');
+							    $overlay.css({'transition':'transform 50ms','-webkit-transition':'-webkit-transform 50ms'});
+							    $target.css(styles.flipStyles._containerFlipStyles.rightStyle);
+							    $overlay.css(styles.flipStyles._overlayFlipStyles.rightFromStyle);
+
+								$overlay.bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd',function(){
+							   		$overlay.css({'transition':'transform 0.2s','-webkit-transition':'-webkit-transform 0.2s'});
+									$overlay.css('visibility','visible');
+								   	$overlay.css(styles.flipStyles._overlayFlipStyles.rightToStyle);
+								   	$overlay.unbind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
+								});
+							}else{
+								$target.css(styles.flipStyles._containerFlipStyles.rightStyle);
+						    	$overlay.css(styles.flipStyles._overlayFlipStyles.rightFromStyle);
+							   	$overlay.css(styles.flipStyles._overlayFlipStyles.rightToStyle);
+							};
+							
+					}else{
+						$overlay.css(styles.rightStyle);
+						$overlay.stop().animate(styles.normalStyle,options.duration);
+					};
+					
 				}else{
-					$overlay.stop().animate(styles.rightStyle,options.duration);
+					if (options.flip) {
+						$.data($overlay,'dir','right');
+					    $target.css(styles.flipStyles._containerFlipStyles.rightStyle);
+					    $overlay.css(styles.flipStyles._overlayFlipStyles.rightFromStyle);
+					}else{
+						$overlay.stop().animate(styles.rightStyle,options.duration);
+					};
 				}
 
 			 break;
 			 case 2:
 			  /** animations from the BOTTOM **/
 			  if (eventType=='mouseenter') {
-					$overlay.css(styles.bottomStyle);
-					$overlay.stop().animate(styles.normalStyle,options.duration);
+			  		if (options.flip) {
+			  			if ($.data($overlay,'dir')!=='bottom') {
+								$overlay.css('visibility','hidden');
+							    $overlay.css({'transition':'transform 50ms','-webkit-transition':'-webkit-transform 50ms'});
+							    $target.css(styles.flipStyles._containerFlipStyles.bottomStyle);
+							    $overlay.css(styles.flipStyles._overlayFlipStyles.bottomFromStyle);
+
+								$overlay.bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd',function(){
+							   		$overlay.css({'transition':'transform 0.2s','-webkit-transition':'-webkit-transform 0.2s'});
+									$overlay.css('visibility','visible');
+								   	$overlay.css(styles.flipStyles._overlayFlipStyles.bottomToStyle);
+								   	$overlay.unbind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
+								});
+							}else{
+							   	$target.css(styles.flipStyles._containerFlipStyles.bottomStyle);
+							    $overlay.css(styles.flipStyles._overlayFlipStyles.bottomFromStyle);
+							    $overlay.css(styles.flipStyles._overlayFlipStyles.bottomToStyle);
+							};
+							
+					}else{
+						$overlay.css(styles.bottomStyle);
+						$overlay.stop().animate(styles.normalStyle,options.duration);
+					};
+					
 				}else{
-					$overlay.stop().animate(styles.bottomStyle,options.duration);
+					if (options.flip) {
+						$.data($overlay,'dir','bottom');
+					    $target.css(styles.flipStyles._containerFlipStyles.bottomStyle);
+					    $overlay.css(styles.flipStyles._overlayFlipStyles.bottomFromStyle);
+					}else{
+						$overlay.stop().animate(styles.bottomStyle,options.duration);
+					};
 				}
 
 			 break;
 			 case 3:
 			  /** animations from the LEFT **/
 			  if (eventType=='mouseenter') {
-					$overlay.css(styles.leftStyle);
-					$overlay.stop().animate(styles.normalStyle,options.duration);
+			  		if (options.flip) {
+			  			if ($.data($overlay,'dir')!=='left') {
+								$overlay.css('visibility','hidden');
+							    $overlay.css({'transition':'transform 50ms','-webkit-transition':'-webkit-transform 50ms'});
+							    $target.css(styles.flipStyles._containerFlipStyles.leftStyle);
+							    $overlay.css(styles.flipStyles._overlayFlipStyles.leftFromStyle);
+
+								$overlay.bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd',function(){
+							   		$overlay.css({'transition':'transform 0.2s','-webkit-transition':'-webkit-transform 0.2s'});
+									$overlay.css('visibility','visible');
+								   	$overlay.css(styles.flipStyles._overlayFlipStyles.leftToStyle);
+								   	$overlay.unbind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
+								});
+							}else{
+							    $target.css(styles.flipStyles._containerFlipStyles.leftStyle);
+							    $overlay.css(styles.flipStyles._overlayFlipStyles.leftFromStyle);
+							    $overlay.css(styles.flipStyles._overlayFlipStyles.leftToStyle);
+							};
+					}else{
+						$overlay.css(styles.leftStyle);
+						$overlay.stop().animate(styles.normalStyle,options.duration);
+					};
+					
 				}else{
-					$overlay.stop().animate(styles.leftStyle,options.duration);
+					if (options.flip) {
+						$.data($overlay,'dir','left');
+					    $target.css(styles.flipStyles._containerFlipStyles.leftStyle);
+					    $overlay.css(styles.flipStyles._overlayFlipStyles.leftFromStyle);
+					}else{
+						$overlay.stop().animate(styles.leftStyle,options.duration);
+					};
 				}
 
 			 break;
