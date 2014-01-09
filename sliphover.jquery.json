@@ -1,7 +1,7 @@
 {
     "name": "sliphover",
     "title": "SlipHover",
-    "description": "Apply direction aware hover effect to images",
+    "description": "Apply direction aware  2D/3D hover effect to images",
     "keywords": [
         "direction-aware",
         "animation",
@@ -9,7 +9,7 @@
         "hover",
         "image"
     ],
-    "version": "1.0.2",
+    "version": "1.1.0",
     "author": {
         "name": "Wayou",
         "email": "liuwayong@gmail.com",
