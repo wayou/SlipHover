@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="SliipHover | direction aware hover animation">
-    <title>SlipHover | direction aware hover effect jquery plugin</title>
+    <title>SlipHover | direction aware hover effect jquery plugin apply 2d/3d hover animation</title>
 
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" type="text/css" href="style/sunburst.min.css">
@@ -22,7 +22,7 @@
           <span class='st_googleplus_hcount' displayText='Google +'></span>
           <span class='st_twitter_hcount' displayText='Tweet'></span>
          </div>
-        <p>Apply direction aware hover animation to images</p>
+        <p>Apply direction aware 2D/3D hover animation to images</p>
 
         <section class="headerbtns">
            <iframe src="http://ghbtns.com/github-btn.html?user=wayou&repo=SlipHover&type=watch&count=true&size=large"
@@ -151,11 +151,10 @@
           <tr>
             <td>flip(3D animation)</td>
              <td>
-              <p><strong>This feature is under implementation. May not work perfectly.</strong></p>
                 <p>
                True to enable the 3D flip animation instead of slid in animation of the overlay when hover on.
               </p>
-              <p>For IE only works on IE 10+. And when use 3D animation, make sure the <span class="code">'height'</span> is <span class="code">'100%'</span>(witch is the default value). </p>
+              <p>For IE only works on IE 10+. And when use 3D animation, make sure the <span class="code">'height'</span> is <span class="code">'100%'</span>(witch is the default value), for there's a known issue that when hover up the overlay is still visible after the animation.</p>
                <ul>
                   <li>Default: <span class="code">false</span></li>
                   <li>Options: <span class="code">true</span> <psan class="code">false</psan></li>
