@@ -1,7 +1,7 @@
 SlipHover
 =========
 
-Apply direction aware hover animation to images or any other elements
+Apply direction aware 2D/3D hover animation to images or any other elements
 
 Go [THERE](http://wayou.github.io/SlipHover/) for more details and see live demos.
 
