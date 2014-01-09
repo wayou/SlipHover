@@ -28,7 +28,7 @@
 		defaults:{//no underscore means this is a public property that users can rewrite it as their own willing
 			target:'img',//specify witch html tag the animation will apply on
 			title:'title',//specify what information will be display when hover, the title or the alt of the image
-			duration:400, //specify how long the animation will lasts in milliseconds
+			duration:300, //specify how long the animation will lasts in milliseconds
 			fontColor:'#ffffff',
 			backgroundColor:'rgba(0,0,0,.5)',//specify the background color and opacity using rgba
 			reverse:false,
