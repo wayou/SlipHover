@@ -3,7 +3,6 @@ html{
 }
 body{
 	margin: 0;
-	background-color: #ddd;
 }
 ::selection{
 	background: rgba(65,131,196,0.4);
