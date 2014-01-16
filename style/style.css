@@ -95,6 +95,10 @@ table.options_table td,table.options_table th{
     padding: 5px;
 }
 
+table.options_table tr:nth-child(odd){
+    background-color: #fdfdfd;
+}
+
 footer{
 	text-align: center;
 }
