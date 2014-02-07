@@ -7,7 +7,9 @@
         "animation",
         "effect",
         "hover",
-        "image"
+        "image",
+        "overlay",
+        "gallery"
     ],
     "version": "1.1.0",
     "author": {
