@@ -11,7 +11,7 @@
         "overlay",
         "gallery"
     ],
-    "version": "1.1.0",
+    "version": "1.1.1",
     "author": {
         "name": "Wayou",
         "email": "liuwayong@gmail.com",
@@ -33,6 +33,7 @@
     "bugs": "https://github.com/Wayou/sliphover/issues",
     "homepage": "http://wayou.github.io/SlipHover/",
     "docs": "http://wayou.github.io/SlipHover/",
+    "demo":"http://wayou.github.io/SlipHover/",
     "download": "https://github.com/Wayou/SlipHover/zipball/master",
     "dependencies": {
         "jquery": ">=1.5"

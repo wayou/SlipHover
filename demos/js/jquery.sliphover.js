@@ -1,5 +1,5 @@
 /*
-* jquery sliphover 1.1.0
+* jquery sliphover 1.1.1
 * apply 2d/3d hover animation to images
 
 * inspired by http://tympanus.net/TipsTricks/DirectionAwareHoverEffect/index2.html
@@ -11,7 +11,7 @@
 *
 * Bug reporting, suggestion, feature requirments, you can:
 * mail to liuwayong@gmail.com
-* or visit this project on github https://github.com/Wayou/SlipHover
+* or visit the project on github https://github.com/Wayou/SlipHover to open issues
 */
 
 ;(function($,window,document,undefined){
@@ -105,8 +105,14 @@
 			var targetOffset=$target.offset(),
 			targetWidth=$target.innerWidth(),
 			targetHeight=$target.innerHeight(),
+
+			//fix for issue#1 https://github.com/Wayou/SlipHover/issues/1
+			staticParents=$target.parents().filter(function(){return this.style.position!=='static';}).length,
+			containerTop=staticParents?(targetOffset.top+borderWidth):0,
+			containerLeft=staticParents?(targetOffset.left+borderWidth):0,
+
 			borderWidth=($target.outerWidth()-$target.innerWidth())/2,
-			$container=$('<div class="sliphoveritem" style="width:'+targetWidth+'px;height:'+targetHeight+'px;text-align:center;overflow:hidden;position:absolute;top:'+(targetOffset.top+borderWidth)+'px;left:'+(targetOffset.left+borderWidth)+'px;">').insertBefore($target);
+			$container=$('<div class="sliphoveritem" style="width:'+targetWidth+'px;height:'+targetHeight+'px;text-align:center;overflow:hidden;position:absolute;top:'+containerTop+'px;left:'+containerLeft+'px;">').insertBefore($target);
 			//if in 3d flip style, set the perspective css property for the container
 			if (this.options.flip) {
 				$container.css({'perspective':'500px','-webkit-perspective':'500px','perspective-origin':'0% 50%','-webkit-perspective-origin':'0% 50%'});
