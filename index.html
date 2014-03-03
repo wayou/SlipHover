@@ -1,327 +1,326 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="SliipHover | direction aware hover animation">
-    <title>SlipHover | direction aware hover effect jquery plugin apply 2d/3d hover animation</title>
-
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" type="text/css" href="style/sunburst.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-   
-    <div id="wrapper">
-      
-      <header>
-        <h1><a href="http://wayou.github.io/SlipHover/">SlipHover</a></h1>
-         <div class="sharebtns">
-          <span class='st_googleplus_hcount' displayText='Google +'></span>
-          <span class='st_twitter_hcount' displayText='Tweet'></span>
-         </div>
-        <p>Apply direction aware 2D/3D hover animation to images</p>
-
-        <section class="headerbtns">
-           <iframe src="http://ghbtns.com/github-btn.html?user=wayou&repo=SlipHover&type=watch&count=true&size=large"
-                  allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
-                <ul class="gtdownload">
-                  <li >
-                    <span class="github-btn github-watchers github-btn-large">
-                      <a class="gh-btn" href="https://github.com/Wayou/SlipHover/zipball/master">
-                        <span class="gh-ico"></span>
-                        <span class="gh-text">ZIP File</span>
-                      </a>
-                    </span>
-                  </li>
-                   <li >
-                    <span class="github-btn github-watchers github-btn-large">
-                      <a class="gh-btn" href="https://github.com/Wayou/SlipHover/tarball/master">
-                        <span class="gh-ico"></span>
-                        <span class="gh-text">TAR Ball</span>
-                      </a>
-                    </span>
-                  </li>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Wayou Liu">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="SlipHover | Apply direction aware hover effect to images">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SlipHover | Apply direction aware hover effect to images</title>
+        <link rel="stylesheet" href="style/main.css">
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="http://wayou.github.io/SlipHover/" >SlipHover</a>
+                </li>
+                <li>
+                    <a href="#doc" title="see the details">Doc & Examples</a>
+                </li>
+                <li>
+                    <a href="#compatibility" title="get it" >Compatibility</a>
+                </li>
+                <li>
+                    <a href="#download" title="get it" >Download</a>
+                </li>
+                <li>
+                    <a href="#about" title="about">About</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="wrapper">
+            <div id="container">
+                <ul>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/1.jpg" title="TV Series Character">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/2.jpg" title="The flute in the Chinese style">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/3.jpg" title="Short hair beauty">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/4.jpg" title="<h4 style='text-align:left;margin:0px;padding:0px;'>Elly Tran Ha</h4><hr><p style='color:#yellow;text-align:left;'>A Vietnam mode. Hot for her selfies</p>">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/5.jpg" title="Girl with guitar">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/6.jpg" title="月恋花">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/7.jpg" title="Kitchen woman">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/8.jpg" title="Cutie cutie">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/9.gif" title="Rolling cube">
+                        </a>
+                    </li>
                 </ul>
-        </section>
-      </header>
-      <section class="nav_section">
-        <div id="demo_container">
-          <ul>
-            <li>
-              <a href="http://wayou.github.io/SlipHover/">
-                <img src="img/1.jpg" alt="image 1" title="Loyal Cao">
-              </a>
-            </li>
-             <li>
-              <a href="http://wayou.github.io/SlipHover/">
-                <img src="img/2.jpg" alt="image 2" title="The flute in the Chinese style">
-              </a>
-            </li>
-             <li>
-              <a href="http://wayou.github.io/SlipHover/">
-                <img src="img/3.jpg" alt="image 3" title="Short hair style">
-              </a>
-            </li>
-             <li>
-              <a href="http://wayou.github.io/SlipHover/">
-                <img src="img/4.jpg" alt="image 4" title="<h4 style='text-align:left;margin:0px;padding:0px;'>Elly Tran Ha</h4><hr><p style='color:#yellow;text-align:left;'>A mordern mode.She's hot for her selfies on the facebook .</p>">
-              </a>
-            </li>
-             <li>
-              <a href="http://wayou.github.io/SlipHover/">
-                <img src="img/5.jpg" alt="image 5" title="Guitar girl">
-              </a>
-            </li>
-             <li>
-              <a href="http://wayou.github.io/SlipHover/">
-                <img src="img/6.jpg" alt="image 6" title="月恋花">
-              </a>
-            </li>
-             <li>
-              <a href="http://wayou.github.io/SlipHover/">
-                <img src="img/7.jpg" alt="image 7" title="Kitchen woman">
-              </a>
-            </li>
-             <li>
-              <a href="http://wayou.github.io/SlipHover/">
-                <img src="img/8.jpg" alt="image 8" title="Cartoon girl">
-              </a>
-            </li> 
-             <li>
-              <a href="http://wayou.github.io/SlipHover/">
-                <img src="img/9.gif" alt="image 9" title="Cutie rolling cube">
-              </a>
-            </li>
-          </ul>
+            </div>
+            <div id="tutorial">
+                <h1>Quick Start</h1>
+                <hr>
+                <p>
+                Include jQuery and the plugin file to your page
+                </p>
+                <div class="highlight code" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;script </span><span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;path/to/jquery.min.js&quot;</span><span style="color: #f92672">&gt;&lt;/script&gt;</span>
+<span style="color: #f92672">&lt;script </span><span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;path/to/jquery.sliphover.min.js&quot;</span><span style="color: #f92672">&gt;&lt;/script&gt;</span>
+</pre></div>
+                <p>Simply call the plugin on the container witch contains images.</p>
+                <div class="highlight code" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;div</span> <span style="color: #a6e22e">id=</span><span style="color: #e6db74">&quot;container&quot;</span><span style="color: #f92672">&gt;</span>
+    <span style="color: #f92672">&lt;img</span> <span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;1.jpg&quot;</span> <span style="color: #a6e22e">title=</span><span style="color: #e6db74">&quot;title1&quot;</span> <span style="color: #f92672">/&gt;</span>
+    <span style="color: #f92672">&lt;img</span> <span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;2.jpg&quot;</span> <span style="color: #a6e22e">title=</span><span style="color: #e6db74">&quot;title2&quot;</span> <span style="color: #f92672">/&gt;</span>
+    ...
+<span style="color: #f92672">&lt;/div&gt;</span>
+
+<span style="color: #f92672">&lt;script </span><span style="color: #a6e22e">type=</span><span style="color: #e6db74">&quot;text/javascript&quot;</span><span style="color: #f92672">&gt;</span>
+    <span style="color: #a6e22e">$</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;#container&quot;</span><span style="color: #f8f8f2">).</span><span style="color: #a6e22e">sliphover</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f92672">&lt;/script&gt;</span>
+</pre></div>
+            </div>
+            <div id="doc">
+                <h1>Options</h1>
+                <hr>
+                <p>To custom the layout of the overlay and control the behavior, you can specify certain options. </p>
+                <div class="highlight code" style="background: #272822"><pre style="line-height: 125%"><span style="color: #a6e22e">$</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;#container&quot;</span><span style="color: #f8f8f2">).</span><span style="color: #a6e22e">sliphover</span><span style="color: #f8f8f2">({</span>
+    <span style="color: #a6e22e">option</span><span style="color: #f92672">:</span> <span style="color: #a6e22e">value</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #a6e22e">option2</span><span style="color: #f92672">:</span> <span style="color: #a6e22e">value2</span><span style="color: #f8f8f2">,</span>
+    <span style="color: #f8f8f2">...</span>
+<span style="color: #f8f8f2">});</span>
+</pre></div>
+                <p>All avalaible options are listed below and there are demos to illustrate.</p>
+                <table class='options_table'>
+                    <tr>
+                        <th>Option</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>height</td>
+                        <td>
+                            <p>
+                            The height of the overlay.
+                            </p>
+                            <ul>
+                                <li>Default: <span class="value">'100%'</span></li>
+                                <li>Options: percentage value string only. <span class="value">'50%'</span> , <span class="value">'30%'</span>, etc.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="option_height.html" target="_blank">view</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>flip</td>
+                        <td>
+                            <p>
+                            True to enable the 3D flip animation instead of slid in animation of the overlay when hover on.
+                            </p>
+                            <p>For IE only works on IE 10+. And when use 3D animation, make sure the value of the <span class="value">'height'</span> option is <span class="value">'100%'</span>(witch is the default value), for there's an known issue that when hover up the overlay is still visible after the animation.</p>
+                            <ul>
+                                <li>Default: <span class="value">false</span></li>
+                                <li>Options: <span class="value">true</span> <psan class="value">false</psan></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="option_flip.html" target="_blank">view</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>target</td>
+                        <td>
+                            <p>
+                            Specify witch element the animation will aplly on.
+                            </p>
+                            <ul>
+                                <li>Default: <span class="value">'img'</span></li>
+                                <li>Options: any element you want. <span class="value">'div'</span>, <span class="value">'.class_name'</span>,etc. If using class name the dot before the class name is needed: <span class="value">'.class_name'</span>.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="option_target.html" target="_blank">view</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td>
+                            <p>The content that will be displayed in the overlay when hover. To show text you need to specify the title attribute of the target element, you can also place html value within the title attribute and it will show properly.</p>
+                            <p>To style the text, you can write you own css rules when assign the content of the 'title' attribute.</p>
+                            <ul>
+                                <li>Default: <span class="value">'title'</span></li>
+                                <li>Options: <span class="value">'title'</span>, <span class="value">'alt'</span>, <span class="value">'your-custom-hmtl5-data-attribute'</span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="option_title.html" target="_blank">view</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>duration</td>
+                        <td>
+                            <p>
+                            The duration of the animation.
+                            </p>
+                            <ul>
+                                <li>Default: <span class="value">'fast'</span></li>
+                                <li>Options: <span class="value">'fast'</span>, <span class="value">'slow'</span>, or a nunmber (milliseconds)</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="option_duration.html" target="_blank">view</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>fontColor</td>
+                        <td>
+                            <p>
+                            The color of the text in the overlay.
+                            </p>
+                            <ul>
+                                <li>Default: <span class="value">'#fff'</span></li>
+                                <li>Options: any valid CSS color syntax. <span class="value">'#9c9c9c'</span> , <span class="value">'rgb(255,0,0)'</span>, <span class="value">'red'</span>, etc.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="option_color.html" target="_blank">view</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>backgroundColor</td>
+                        <td>
+                            <p>
+                            The color of the overlay.
+                            </p>
+                            <ul>
+                                <li>Default: <span class="value">'rgba(0,0,0,.5)'</span></li>
+                                <li>Options: any valid CSS color syntax. <span class="value">'#9c9c9c'</span> , <span class="value">'rgb(255,0,0)'</span>, <span class="value">'red'</span>, etc. If you wanna the overlay be transparent then use rgba color type to specify the opacity: <span class="value">'rgba(0,255,0,0.3)'</span> here the 0.3 is the opacity.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="option_color.html" target="_blank">view</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>reverse</td>
+                        <td>
+                            <p>
+                            Reverse the animation.
+                            </p>
+                            <ul>
+                                <li>Default: <span class="value">false</span></li>
+                                <li>Options: <span class="value">false</span>, <span class="value">true</span>.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="option_reverse.html" target="_blank">view</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>autoScroll</td>
+                        <td>
+                            <p>
+                            If true, when the text of the overlay is too long and overflowed, it will auto scrolling up and down when hover oh it.
+                            </p>
+                            <ul>
+                                <li>Default: <span class="value">true</span></li>
+                                <li>Options: <span class="value">true</span>, <span class="value">false</span>. If set to <span class="value">false</span>, there will be a vertical scroll bar.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="option_auto_scroll.html" target="_blank">view</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>scrollSpeed</td>
+                        <td>
+                            <p>
+                            How fast the overlay text will scroll animated when the overlay text is overflow and the <span class="value">'autoScroll'</span> is <span class="value">true</span>.
+                            </p>
+                            <ul>
+                                <li>Default: <span class="value">40</span></li>
+                                <li>Options: plain number. the samller the faster.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <a href="option_auto_scroll.html" target="_blank">view</a>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div id="compatibility">
+                <h1>Browser Compatibility</h1>
+                <hr>
+                <p>This plugin works fine on all morder browsers and IE9+.</p>
+            </div>
+            <div id="download">
+                <h1>Download</h1>
+                <hr>
+                <p>The plugin js file along with a minified version and all examples are included in the download files. You can run them locally.</p>
+                <a href="https://github.com/Wayou/SlipHover/zipball/master">Download ZIP</a>
+                <a href="https://github.com/Wayou/SlipHover/tarball/master">Download TAR</a>
+            </div>
+            <div id="about">
+                <h1>About</h1>
+                <hr>
+                <ul>
+                    <li>
+                        If you like this plugin, please star/fork me on <a href="https://github.com/wayou/SlipHover/">GitHub</a>
+                    </li>
+                    <li>
+                        Pull requests are welcome if you wanna contribute or help me with the documentation
+                    </li>
+                    <li>
+                        Suggestions, bugs reporting you can open an issue on the project page
+                    </li>
+                    <li>
+                        Need support or any requirments you can open an issue on the project page or <a href="mailto:liuwayong@gmail.com">contact me</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </section>
-      <section class="content_block">
-        <h1 id="quickstart" class="section_title">Quick Start
-         <span class="back_btn"><a title="back to top" href="#"></a> </span>
-        </h1>
-        <hr>
-        <p>
-        1. Include jQuery and the plugin file to your page
-        </p>
-        <pre class="prettyprint">
-&ltscript src="path/to/jquery.min.js"&gt&lt/script&gt
-&ltscript src="path/to/jquery.sliphover.min.js"&gt&lt/script&gt</pre>
-        <p>2. Simply call the plugin on the container witch contains images.</p>
-        <p>Say we have the following HTML structure:</p>
-        <pre class="prettyprint">
-&ltdiv id="container"&gt
-  &ltimg src="1.jpg" title="title1" /&gt
-  &ltimg src="2.jpg" title="title2" /&gt
-  ...
-&lt/div&gt</pre>
-        <pre  class="prettyprint">$("#container").sliphover();</pre>
-
-      </section>
-      <section class="content_block">
-         <h1 id="options" class="section_title">Options
-           <span class="back_btn"><a title="back to top" href="#"></a> </span>
-        </h1>
-        <hr>
-        <p>To custom the layout of the overlay and control the behavior, you can specify certain options. </p>
-        <p>All avalaible options are listed below and there are demos to illustrate.</p>
-        <table class='options_table'>
-          <tr>
-            <th>Option</th>
-            <th>Description</th>
-            <th>Example</th>
-          </tr>
-          <tr>
-            <td>height</td>
-             <td>
-                <p>
-               The height of the overlay.
-              </p>
-               <ul>
-                  <li>Default: <span class="code">'100%'</span></li>
-                  <li>Options: percentage value string only. <psan class="code">'50%'</psan> , <span class="code">'30%'</span>, etc.</li>
-              </ul>
-            </td>
-            <td>
-              <a href="demos/example_option_height.html" target="_blank">view</a>
-            </td>
-          </tr>
-          <tr>
-            <td>flip(3D animation)</td>
-             <td>
-                <p>
-               True to enable the 3D flip animation instead of slid in animation of the overlay when hover on.
-              </p>
-              <p>For IE only works on IE 10+. And when use 3D animation, make sure the <span class="code">'height'</span> is <span class="code">'100%'</span>(witch is the default value), for there's a known issue that when hover up the overlay is still visible after the animation.</p>
-               <ul>
-                  <li>Default: <span class="code">false</span></li>
-                  <li>Options: <span class="code">true</span> <psan class="code">false</psan></li>
-              </ul>
-            </td>
-            <td>
-              <a href="demos/example_option_3d_animation.html" target="_blank">view</a>
-            </td>
-          </tr>
-          <tr>
-            <td>target</td>
-            <td>
-              <p>
-              Specify witch element the animation will aplly on.
-              </p>
-               <ul>
-                  <li>Default: <span class="code">'img'</span></li>
-                  <li>Options: any element you want. <span class="code">'div'</span>, <span class="code">'.class_name'</span>,etc. If using class name the dot before the class name is needed: <span class="code">'.class_name'</span>.</li>
-              </ul>
-            </td>
-            <td>
-              <a href="demos/example_option_target.html" target="_blank">view</a>
-            </td>
-          </tr>
-          <tr>
-            <td>title</td>
-            <td>
-              <p>The content that will be displayed in the overlay when hover. To show text you need to specify the title attribute of the target element, you can also place html code within the title attribute and it will show properly.</p>
-              <p>To style the text, you can write you own css rules when assign the content of the 'title' attribute.</p>
-              <ul>
-                  <li>Default: <span class="code">'title'</span></li>
-                  <li>Options: <span class="code">'title'</span>, <span class="code">'alt'</span>, <span class="code">'your-custom-hmtl5-data-attribute'</span></li>
-              </ul>
-            </td>
-            <td>
-              <a href="demos/example_option_title.html" target="_blank">view</a>
-            </td>
-          </tr>
-          <tr>
-            <td>duration</td>
-            <td>
-              <p>
-                The duration of the animation.
-              </p>
-               <ul>
-                  <li>Default: <span class="code">'fast'</span></li>
-                  <li>Options: <span class="code">'fast'</span>, <span class="code">'slow'</span>, or a nunmber (milliseconds)</li>
-              </ul>
-            </td>
-            <td>
-              <a href="demos/example_option_duration.html" target="_blank">view</a>
-            </td>
-          </tr>
-          <tr>
-            <td>fontColor</td>
-            <td>
-              <p>
-                The color of the text in the overlay.
-              </p>
-               <ul>
-                  <li>Default: <span class="code">'#fff'</span></li>
-                  <li>Options: any valid CSS color syntax. <span class="code">'#9c9c9c'</span> , <span class="code">'rgb(255,0,0)'</span>, <span class="code">'red'</span>, etc.</li>
-              </ul>
-            </td>
-            <td>
-              <a href="demos/example_option_color.html" target="_blank">view</a>
-            </td>
-          </tr>
-          <tr>
-            <td>backgroundColor</td>
-            <td>
-                <p>
-                The color of the overlay.
-              </p>
-               <ul>
-                  <li>Default: <span class="code">'rgba(0,0,0,.5)'</span></li>
-                  <li>Options: any valid CSS color syntax. <span class="code">'#9c9c9c'</span> , <span class="code">'rgb(255,0,0)'</span>, <span class="code">'red'</span>, etc. If you wanna the overlay be transparent then use rgba color type to specify the opacity: <span class="code">'rgba(0,255,0,0.3)'</span> here the 0.3 is the opacity.</li>
-              </ul>
-            </td>
-            <td>
-              <a href="demos/example_option_color.html" target="_blank">view</a>
-            </td>
-          </tr>
-          <tr>
-            <td>reverse</td>
-             <td>
-                <p>
-                Reverse the animation.
-              </p>
-               <ul>
-                  <li>Default: <span class="code">false</span></li>
-                  <li>Options: <span class="code">false</span>, <span class="code">true</span>.</li>
-              </ul>
-            </td>
-            <td>
-              <a href="demos/example_option_reverse.html" target="_blank">view</a>
-            </td>
-          </tr>
-          <tr>
-            <td>autoScroll</td>
-             <td>
-                <p>
-                If true, when the text of the overlay is too long and overflowed, it will auto scrolling up and down when hover oh it.
-              </p>
-               <ul>
-                  <li>Default: <span class="code">true</span></li>
-                  <li>Options: <span class="code">true</span>, <span class="code">false</span>. If set to <span class="code">false</span>, there will be a vertical scroll bar.</li>
-              </ul>
-            </td>
-            <td>
-              <a href="demos/example_option_auto_scroll.html" target="_blank">view</a>
-            </td>
-          </tr>
-          <tr>
-            <td>scrollSpeed</td>
-             <td>
-                <p>
-                How fast the overlay text will scroll animated when the overlay text is overflow and the <span class="code">'autoScroll'</span> is <span class="code">true</span>.
-              </p>
-               <ul>
-                  <li>Default: <span class="code">40</span></li>
-                  <li>Options: plain number. the samller the faster.</li>
-              </ul>
-            </td>
-            <td>
-              <a href="demos/example_option_auto_scroll.html" target="_blank">view</a>
-            </td>
-          </tr>
-           
-        </table>
-      </section>
-      <section class="content_block">
-
-      </section>
-      <footer>
-        <ul>
-            <li>
-              <a href="https://github.com/wayou/SlipHover/"><small>View on GitHub</small></a>
-            </li>
-            <li>
-              <a href="mailto:liuwayong@gmail.com"><small>Contact</small></a>
-            </li>
-        </ul>
-      </footer>
-    </div>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.sliphover.min.js"></script>
-    <script src="js/prettify.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        $('#demo_container').sliphover();
-        //code highlight
-        prettyPrint();
-      })
-    </script>
-    <!-- google analytics -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-46794744-1', 'wayou.github.io');
-      ga('send', 'pageview');
-
-    </script>
-    <!-- google analytics end -->
-  </body>
+        <footer>
+            <small> <a href="https://plus.google.com/u/0/+WayouLiu/posts">Me on Google+</a>|<a href="http://www.cnblogs.com/Wayou/">My Blog</a>|<a href="mailto:liuwayong@gmail.com">Contact</a> </small>
+        </footer>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.sliphover.min.js"></script>
+        <script type="text/javascript">
+        $(function(){
+          $('#container').sliphover();
+        })
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-46794744-1', 'wayou.github.io');
+            ga('send', 'pageview');
+        </script>
+    </body>
 </html>
