@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Wayou Liu">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="SlipHover | Apply direction aware hover effect to images">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SlipHover | direction aware hover effect duration option example</title>
+        <link rel="stylesheet" href="style/main.css">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="http://wayou.github.io/SlipHover/" >SlipHover</a>
+                </li>
+                <li>
+                    <a href="#doc" title="see the details">Doc & Examples</a>
+                </li>
+                <li>
+                    <a href="#compatibility" title="get it" >Compatibility</a>
+                </li>
+                <li>
+                    <a href="#download" title="get it" >Download</a>
+                </li>
+                <li>
+                    <a href="#about" title="about">About</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="wrapper">
+            
+            <div id="container">
+                <ul>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/1.jpg" title="TV Series Character">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/2.jpg" title="The flute in the Chinese style">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/3.jpg" title="Short hair beauty">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/4.jpg" title="<h4 style='text-align:left;margin:0px;padding:0px;'>Elly Tran Ha</h4><hr><p style='color:#yellow;text-align:left;'>A Vietnam mode. Hot for her selfies</p>">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/5.jpg" title="Girl with guitar">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/6.jpg" title="月恋花">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/7.jpg" title="Kitchen woman">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/8.jpg" title="Cutie cutie">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Wayou/SlipHover">
+                        <img src="img/9.gif" title="Rolling cube">
+                        </a>
+                    </li>
+                </ul>
+                <div>
+                     <span>Example: duration option</span>
+                   <input type="number" placeholder="600" id="duration">
+        <input type="button" value="Run" style="width:50px;" id="run">
+                </div>
+            </div>
+            <div id="tutorial">
+                <p>
+                HTML:
+                </p>
+<div class="highlight code" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;div</span> <span style="color: #a6e22e">id=</span><span style="color: #e6db74">&quot;container&quot;</span><span style="color: #f92672">&gt;</span>
+    <span style="color: #f92672">&lt;ul&gt;</span>
+        <span style="color: #f92672">&lt;li&gt;</span>
+            <span style="color: #f92672">&lt;a</span> <span style="color: #a6e22e">href=</span><span style="color: #e6db74">&quot;http://wayou.github.io/SlipHover/&quot;</span><span style="color: #f92672">&gt;</span>
+            <span style="color: #f92672">&lt;img</span> <span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;../img/1.jpg&quot;</span> <span style="color: #a6e22e">title=</span><span style="color: #e6db74">&quot;TV Series Character&quot;</span> <span style="color: #f92672">&gt;</span>
+            <span style="color: #f92672">&lt;/a&gt;</span>
+        <span style="color: #f92672">&lt;/li&gt;</span>
+        ...
+    <span style="color: #f92672">&lt;/ul&gt;</span>
+<span style="color: #f92672">&lt;/div&gt;</span>
+</pre></div>
+        JavaScript:
+       <div class="highlight code" style="background: #272822"><pre style="line-height: 125%"><span style="color: #a6e22e">$</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;#container&#39;</span><span style="color: #f8f8f2">).</span><span style="color: #a6e22e">sliphover</span><span style="color: #f8f8f2">({</span>
+    <span style="color: #a6e22e">duration</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;slow&#39;</span> <span style="color: #75715e">//&#39;fast&#39; or number (in milliseconds)</span>
+<span style="color: #f8f8f2">});</span>
+</pre></div>
+            </div>
+        </div>
+        <footer>
+            <small> <a href="https://plus.google.com/u/0/+WayouLiu/posts">Me on Google+</a>|<a href="http://www.cnblogs.com/Wayou/">My Blog</a>|<a href="mailto:liuwayong@gmail.com">Contact</a> </small>
+        </footer>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.sliphover.min.js"></script>
+        <script type="text/javascript">
+            $("#duration").keydown(function(event) {
+                  // Allow: backspace, delete, tab, escape, enter and .
+                  if ( $.inArray(event.keyCode,[46,8,9,27,13,190]) !== -1 ||
+                       // Allow: Ctrl+A
+                      (event.keyCode == 65 && event.ctrlKey === true) || 
+                       // Allow: home, end, left, right
+                      (event.keyCode >= 35 && event.keyCode <= 39)) {
+                           // let it happen, don't do anything
+                           return;
+                  }
+                  else {
+                      // Ensure that it is a number and stop the keypress
+                      if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
+                          event.preventDefault(); 
+                      }   
+                  }
+              });
+
+                $('#container').sliphover({
+              duration:'slow'
+            });
+
+            $("#run").click(function(){
+               var input=$('#duration').val(),
+              number=parseInt(input);
+              if (number) {
+                 $('#container').sliphover({
+                    duration:number
+                  });
+              };
+            })
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-46794744-1', 'wayou.github.io');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>
