@@ -24,6 +24,11 @@ div.wrapper{
     border: 1px solid #09c;
     box-shadow: 0 0 2px rgba(0, 200, 204, 0.7);
 }
+div#sliphover_share{
+	position: absolute;
+	right: 5px;
+	top:7px;
+}
 nav	{
 	position: fixed;
 	top: 0;
