@@ -29,7 +29,7 @@ Say we have the following HTML structure, by default,the plugin will look for im
 </div>
 ```
 
-then we simply apply effect to the container.
+then call the plugin on the container.
 
 ```javascript
 $("#container").sliphover();
