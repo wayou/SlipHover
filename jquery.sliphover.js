@@ -1,5 +1,5 @@
 /*
- * jquery sliphover 1.1.3
+ * jquery sliphover 1.1.4
  * apply 2d/3d hover animation to images
  *
  * inspired by http://tympanus.net/TipsTricks/DirectionAwareHoverEffect/index2.html
@@ -122,13 +122,15 @@
                 return this.style.position !== 'static';
             }).length,
                 targetOffset = notStaticParents ? $target.position() : $target.offset(),
-                targetWidth = $target.innerWidth(),
-                targetHeight = $target.innerHeight(),
+                // targetWidth = $target.innerWidth(),
+                // targetHeight = $target.innerHeight(),
+                 targetWidth = $target.outerWidth(),
+                targetHeight = $target.outerHeight(),
                 borderWidth = ($target.outerWidth() - $target.innerWidth()) / 2,
-                // containerTop=notStaticParents?borderWidth:(targetOffset.top+borderWidth),
-                // containerLeft=notStaticParents?borderWidth:(targetOffset.left+borderWidth),
-                containerTop = targetOffset.top + borderWidth,
-                containerLeft = targetOffset.left + borderWidth,
+                // containerTop = targetOffset.top + borderWidth,
+                // containerLeft = targetOffset.left + borderWidth,
+                containerTop = targetOffset.top,
+                containerLeft = targetOffset.left,
                 $container = $('<div class="sliphoveritem" style="border-radius:'+$target.css('borderRadius')+';width:' + targetWidth + 'px;height:' + targetHeight + 'px;text-align:center;overflow:hidden;position:absolute;top:' + containerTop + 'px;left:' + containerLeft + 'px;">').insertBefore($target);
             //if in 3d flip style, set the perspective css property for the container
             if (this.options.flip) {
