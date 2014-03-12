@@ -1,5 +1,5 @@
 /*
- * jquery sliphover 1.1.2
+ * jquery sliphover 1.1.3
  * apply 2d/3d hover animation to images
  *
  * inspired by http://tympanus.net/TipsTricks/DirectionAwareHoverEffect/index2.html
@@ -13,8 +13,7 @@
  * mail to liuwayong@gmail.com
  * or visit the project on github https://github.com/Wayou/SlipHover to open issues
  */
-;
-(function($, window, document, undefined) {
+;(function($, window, document, undefined) {
     'use strict';
     var SlipHover = function(element, options) {
         this.$element = element,
@@ -130,7 +129,7 @@
                 // containerLeft=notStaticParents?borderWidth:(targetOffset.left+borderWidth),
                 containerTop = targetOffset.top + borderWidth,
                 containerLeft = targetOffset.left + borderWidth,
-                $container = $('<div class="sliphoveritem" style="width:' + targetWidth + 'px;height:' + targetHeight + 'px;text-align:center;overflow:hidden;position:absolute;top:' + containerTop + 'px;left:' + containerLeft + 'px;">').insertBefore($target);
+                $container = $('<div class="sliphoveritem" style="border-radius:'+$target.css('borderRadius')+';width:' + targetWidth + 'px;height:' + targetHeight + 'px;text-align:center;overflow:hidden;position:absolute;top:' + containerTop + 'px;left:' + containerLeft + 'px;">').insertBefore($target);
             //if in 3d flip style, set the perspective css property for the container
             if (this.options.flip) {
                 $container.css({
@@ -148,7 +147,7 @@
             return $container;
         },
         _createOverlay: function($container, options, $target) {
-            var $overlay = $('<div class="sliphoveritemTitle" style="width:100%;height:' + this.options.height + ';box-sizing:border-box;-moz-box-sizing:border-box;padding:5px;overflow:auto;position:absolute;color:' + this.options.fontColor + ';background-color:' + this.options.backgroundColor + ';">').html('<div style="position:relative;width:100%;">' + $target.attr(options.title) + '</div>'),
+            var $overlay = $('<div class="sliphoveritemTitle" style="border-radius:'+$target.css('borderRadius')+';width:100%;height:' + this.options.height + ';box-sizing:border-box;-moz-box-sizing:border-box;padding:5px;overflow:auto;position:absolute;color:' + this.options.fontColor + ';background-color:' + this.options.backgroundColor + ';">').html('<div style="position:relative;width:100%;">' + $target.attr(options.title) + '</div>'),
                 $innerContainer = $overlay.children();
             //initialize elements' style
             if (this.options.flip) {
