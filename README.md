@@ -37,4 +37,4 @@ $("#container").sliphover();
 
 That's all! 
 
-
+hi OlivierCo, I use the 'that' in the following callbacks of 'fr.onload' and 'fr.onerror'. While out of these area, we can just directly use 'this' for the context.
