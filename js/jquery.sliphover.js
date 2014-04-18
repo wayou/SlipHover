@@ -1,5 +1,5 @@
 /*
- * jquery sliphover 1.1.4
+ * jquery sliphover 1.1.5
  * apply 2d/3d hover animation to images
  *
  * inspired by http://tympanus.net/TipsTricks/DirectionAwareHoverEffect/index2.html
@@ -20,7 +20,7 @@
         this.options = $.extend({}, this.defaults, options)
     };
     SlipHover.prototype = {
-        defaults: { //no underscore means this is a public property that users can rewrite it as their own willing
+        defaults: { 
             target: 'img', //specify witch html tag the animation will apply on
             title: 'title', //specify what information will be display when hover, the title or the alt of the image
             duration: 'fast', //specify how long the animation will lasts in milliseconds
@@ -308,11 +308,11 @@
     };
     SlipHover.constructor = SlipHover; //fix the prototype link
     $.fn.sliphover = function(options) {
-        var entry = $.data(this, 'sliphover');
+        var entry = this.data('sliphover');
         if (!entry) {
             entry = new SlipHover(this, options);
             entry._ini();
-            $.data(this, 'sliphover', entry);
+            this.data('sliphover',entry);
         } else {
             entry._ini(this, options);
         }
