@@ -15,13 +15,13 @@
     "author": {
         "name": "Wayou",
         "email": "liuwayong@gmail.com",
-        "url": "https://github.com/Wayou"
+        "url": "https://github.com/wayou"
     },
     "maintainers": [
         {
            "name": "Wayou",
             "email": "liuwayong@gmail.com",
-            "url": "https://github.com/Wayou"
+            "url": "https://github.com/wayou"
         }
     ],
     "licenses": [
@@ -30,11 +30,11 @@
             "url": "https://github.com/jquery/jquery-color/blob/2.1.2/MIT-LICENSE.txt"
         }
     ],
-    "bugs": "https://github.com/Wayou/sliphover/issues",
+    "bugs": "https://github.com/wayou/sliphover/issues",
     "homepage": "http://wayou.github.io/SlipHover/",
     "docs": "http://wayou.github.io/SlipHover/",
     "demo":"http://wayou.github.io/SlipHover/",
-    "download": "https://github.com/Wayou/SlipHover/zipball/master",
+    "download": "https://github.com/wayou/SlipHover/zipball/master",
     "dependencies": {
         "jquery": ">=1.5"
     }
