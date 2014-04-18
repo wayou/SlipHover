@@ -1,5 +1,5 @@
 /*
- * jquery sliphover 1.1.5
+ * jquery sliphover 1.1.6
  * apply 2d/3d hover animation to images
  *
  * inspired by http://tympanus.net/TipsTricks/DirectionAwareHoverEffect/index2.html
