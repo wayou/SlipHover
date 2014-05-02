@@ -26,7 +26,7 @@
             duration: 'fast', //specify how long the animation will lasts in milliseconds
             fontColor: '#ffffff',
             backgroundColor: 'rgba(0,0,0,.5)', //specify the background color and opacity using rgba
-            reverse: false,
+            reverse: false,//reverse the direction
             flip: false, //true to enable the 3d flip animation
             autoScroll: true, //if true, the overflowed long text of the overlay will auto scrolling up and down when hover
             scrollSpeed: 40, //if autoScroll is true, this option specify the scroll speed, the smaller the fast
