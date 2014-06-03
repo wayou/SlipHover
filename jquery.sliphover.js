@@ -9,9 +9,8 @@
  *
  * Licensed under the MIT license.
  *
- * Bug reporting, suggestion, feature requirments, you can:
- * mail to liuwayong@gmail.com
- * or visit the project on github https://github.com/Wayou/SlipHover to open issues
+ * Bug reporting, suggestion, feature requirments, you can visit the project on github and open issues
+ * https://github.com/Wayou/SlipHover to open issues
  */
 ;(function($, window, document, undefined) {
     'use strict';
