@@ -16,7 +16,7 @@
             backgroundColor: 'rgba(0,0,0,.5)', //specify the background color and opacity using rgba
             reverse: false,//reverse the direction
             flip: false, //true to enable the 3d flip animation
-            autoScroll: true, //if true, the overflowed long text of the overlay will auto scrolling up and down when hover
+            autoScroll: true, //whether auto scroll to show the caption when it is overflow
             scrollSpeed: 40, //if autoScroll is true, this option specify the scroll speed, the smaller the fast
             height: '100%' //specify the height of the overlay
         };
