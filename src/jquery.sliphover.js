@@ -1,6 +1,6 @@
 /**
  *sliphover v1.2.0
- *https://github.com/wayou/SlipHover
+ *issues report https://github.com/wayou/SlipHover/issues?state=open
  */
 
 ;
