@@ -3,7 +3,8 @@
 	<head>
 		<title>sliphover demo</title>
 		<link rel="stylesheet" href="css/main.css">
-		
+		<link rel="stylesheet" href="../src/sliphover.css">
+
 	</head>
 	<body>
 		<div class="wrapper" id="element">
@@ -27,17 +28,20 @@
 					<img src="img/6.jpg" alt="">
 				</li>
 				<li>
-					<img src="img/7.jpg" alt="">
+					<img id="test" src="img/7.jpg" alt="">
 				</li>
 			</ul>
+			<button id="addPic">add</button>
 		</div>
 		<script src="../src/jquery-2.0.0.min.js"></script>
 		<script src="../src/jquery.sliphover.js"></script>
 		<script>
 			$(function() {
-				$("#element").sliphover({
-					propertyName: "a custom value"
-				});
+				$("#element").sliphover();
+
+				$('#addPic').on('click',function(e){
+					$('#element').find('ul').append('<li><img src="img/8.jpg" alt=""></li>');
+				})
 			});
 		</script>
 	</body>
