@@ -1,5 +1,5 @@
 /**
- *sliphover v1.2.0
+ *sliphover v1.2.2
  *issues report https://github.com/wayou/SlipHover/issues?state=open
  */
 
@@ -34,111 +34,118 @@
     SlipHover.prototype = {
         init: function() {
             var that = this,
-                target = this.target || 'img'; //if the given value if not valid, use img by default
-            $(this.element).off('mouseenter.sliphover mouseout.sliphover', target)
-                .on('mouseenter.sliphover mouseout.sliphover', target, function(event) {
-                    var $element = $(event.target),
-                        //$overlayContainer = that.createContainer($element),
-                        direction = that.getDirection($element, event);
+                target = this.settings.target;
 
-                    if (event.type == 'mouseenter') {
-                        //create overlay and slide in
-                        //that.createOverlay(that, $overlayContainer, direction, $element);
-                        console.log('overlay created');
-                    } else {
-                        //slide out and remove the overlay
-                        var overlayId = $element.data('sliphover_overlay');
-                        console.log($('#' + overlayId));
-                        $('#' + overlayId).remove();
-                    }
-                });
+            //bind mouseenter event to the target and create an overlay upon it
+            $(this.element).off('mouseenter.sliphover', target).on('mouseenter.sliphover', target, function(event) {
+                var $element = $(event.target),
+                    $overlayContainer = that.createContainer($element),
+                    direction = that.getDirection($element, event);
+                //create overlay and slide in
+                that.createOverlay(that, $overlayContainer, direction, $element);
+            });
+
+             //since the origin target is under the overlay, the mouseleave event can only be attached to the overlay now
+            $(this.element).off('mouseleave.sliphover', '.sliphover-container').on('mouseleave.sliphover', '.sliphover-container', function(event) {
+                var direction = that.getDirection($(this), event);
+                window.console.log('leave triggered');
+                //slide out based on the direction
+                that.removeOverlay(that, $(this), direction);
+            });
         },
         createContainer: function($element) {
             //get the properties of the target
-            var top = parseFloat($element.offset().top),
-                left = parseFloat($element.offset().left),
-                border = parseFloat($element.css("border-left-width")),
-                width = $element.width(),
-                height = $element.height(),
-                zIndex = $element.css("z-index");
-            var $overlayContainer = $('<div/>', {
-                class: 'sliphover-container',
-                id: new Date().getTime()
+            var top = $element.offset().top,
+                left = $element.offset().left,
+                //border = parseFloat($element.css("border-left-width")),
+                width = $element.outerWidth(),
+                height = $element.outerHeight();
+            //zIndex = $element.css("z-index");
+            var $overlayContainer = $('<div>', {
+                class: 'sliphover-container'
             }).css({
                 width: width,
                 height: height,
-                position: 'absolute',
-                top: (top + border) + 'px',
-                left: (left + border) + 'px',
-                zIndex: zIndex + 1,
-                backgroundColor: 'rgba(0,0,0,.5)'
+                top: top,
+                left: left,
             }).insertBefore($element);
-            $element.data('sliphover_overlay', $overlayContainer.attr('id'));
 
             return $overlayContainer;
-
         },
         createOverlay: function(instance, $overlayContainer, direction, $element) {
             var initClass, $overlay, content;
 
             switch (direction) {
                 case 0: //from top
-                    initClass = 'sliphover-top'
+                    initClass = 'sliphover-top';
                     break;
                 case 1: //from right
-                    initClass = 'sliphover-right'
+                    initClass = 'sliphover-right';
                     break;
                 case 2: //from bottom
-                    initClass = 'sliphover-bottom'
+                    initClass = 'sliphover-bottom';
                     break;
                 case 3: //from left
-                    initClass = 'sliphover-left'
+                    initClass = 'sliphover-left';
                     break;
                 default:
-                    console.error('error when get direction of the mouse');
+                    window.console.error('error when get direction of the mouse');
             };
 
             content = $element.attr(instance.settings.caption);
             $overlay = $('<div>', {
-                class: initClass
-            }).html(content);
+                class: 'sliphover-overlay ' + initClass
+            })
+                .css({
+                    backgroundColor: instance.settings.backgroundColor
+                })
+                .html(content);
 
             $overlayContainer.html($overlay);
-        },
-        removeOverlay: function($element) {
 
+            //slide in
+            $overlay.stop().animate({
+                top: 0,
+                left: 0
+            }, instance.settings.duration);
         },
-        applyAnimation: function(direction, $element, event) {
+        removeOverlay: function(instance, $overlayContainer, direction) {
+            var finalState,
+                $overlay = $overlayContainer.find('.sliphover-overlay');
+
             switch (direction) {
-                case 0: //from top
-                    if (event.type == 'mouseenter') {
-                        console.log('enter from top')
-                    } else {
-                        console.log('leave from top')
-                    }
+                case 0: //to top
+                    finalState = {
+                        top: '-100%',
+                        left: 0
+                    };
                     break;
-                case 1: //from right
-                    if (event.type == 'mouseenter') {
-                        console.log('enter from right')
-                    } else {
-                        console.log('leave from right')
-                    }
+                case 1: //to right
+                    finalState = {
+                        top: 0,
+                        left: '100%'
+                    };
                     break;
-                case 2: //from bottom
-                    if (event.type == 'mouseenter') {
-                        console.log('enter from bottom')
-                    } else {
-                        console.log('leave from bottom')
-                    }
+                case 2: //to bottom
+                    finalState = {
+                        top: '100%',
+                        left: 0
+                    };
                     break;
-                case 3: //from left
-                    if (event.type == 'mouseenter') {
-                        console.log('enter from left')
-                    } else {
-                        console.log('leave from left')
-                    }
+                case 3: //to left
+                    finalState = {
+                        top: 0,
+                        left: '-100%'
+                    };
                     break;
+                default:
+                    window.console.error('error when get direction of the mouse');
             };
+
+            //slide out
+            $overlay.stop().animate(finalState, instance.settings.duration, function() {
+                $overlayContainer.remove();
+            });
         },
         getDirection: function($target, event) {
             //reference: http://stackoverflow.com/questions/3627042/jquery-animation-for-a-hover-with-mouse-direction

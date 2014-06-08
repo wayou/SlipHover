@@ -1,29 +1,31 @@
-
 .sliphover-container {
-
     position: absolute;
-
     overflow: hidden;
 }
-.sliphover-normal: {
+.sliphover-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.sliphover-normal {
     left: 0;
-    bottom: 0;
+    top: 0;
 }
-.sliphover-top: {
-    left: 0, ;
-    bottom: 100%;
+.sliphover-top {
+    left: 0;
+    top: -100%;
 }
-.sliphover-right: {
+.sliphover-right {
     left: 100%;
-    bottom: 0;
+    top: 0;
 }
-.sliphover-bottom: {
+.sliphover-bottom {
     left: 0;
-    bottom: -100%;
+    top: 100%;
 }
-.sliphover-left: {
+.sliphover-left {
     left: -100%;
-    bottom: 0;
+    top: 0;
 }
 .normalPerspectiveOrigin {
     perspective: 500px;

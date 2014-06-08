@@ -7,7 +7,7 @@
 
 	</head>
 	<body>
-		<div class="wrapper" id="element" style="background-color:#ddd;">
+		<div class="wrapper" >
 			<ul>
 				<li>
 					<img src="img/1.jpg" title="hello world!" />
@@ -37,10 +37,10 @@
 		<script src="../src/jquery.sliphover.js"></script>
 		<script>
 			$(function() {
-				$("#element").sliphover();
+				$(".wrapper").sliphover();
 
 				$('#addPic').on('click',function(e){
-					$('#element').find('ul').append('<li><img src="img/8.jpg" alt=""></li>');
+					$('.wrapper').find('ul').append('<li><img src="img/8.jpg" alt=""></li>');
 				})
 			});
 		</script>

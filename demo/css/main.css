@@ -1,6 +1,7 @@
 .wrapper {
     margin: 0 auto;
     width: 80%;
+    background-color:#ddd;
 }
 li {
     list-style-type: none;
@@ -8,4 +9,7 @@ li {
 }
 img {
     height: 200px;
+   /*width: 100%;*/
+   border:5px solid #999;
+   margin: 10px;
 }
