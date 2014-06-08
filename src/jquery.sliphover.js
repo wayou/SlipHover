@@ -1,6 +1,8 @@
 /**
  *sliphover v1.2.2
  *issues report https://github.com/wayou/SlipHover/issues?state=open
+ *jquery v>1.7
+ *using with isotope, packery etc.
  */
 
 ;
@@ -36,21 +38,28 @@
             var that = this,
                 target = this.settings.target;
 
-            //bind mouseenter event to the target and create an overlay upon it
+            //create the overlay container each time the mouse enters
             $(this.element).off('mouseenter.sliphover', target).on('mouseenter.sliphover', target, function(event) {
                 var $element = $(event.target),
-                    $overlayContainer = that.createContainer($element),
-                    direction = that.getDirection($element, event);
-                //create overlay and slide in
-                that.createOverlay(that, $overlayContainer, direction, $element);
-            });
+                    $overlayContainer = that.createContainer($element);
 
-             //since the origin target is under the overlay, the mouseleave event can only be attached to the overlay now
-            $(this.element).off('mouseleave.sliphover', '.sliphover-container').on('mouseleave.sliphover', '.sliphover-container', function(event) {
-                var direction = that.getDirection($(this), event);
-                window.console.log('leave triggered');
-                //slide out based on the direction
-                that.removeOverlay(that, $(this), direction);
+                $overlayContainer.off('mouseenter.sliphover mouseleave.sliphover').on('mouseenter.sliphover mouseleave.sliphover', function(event) {
+                    //if (!$overlayContainer) return;
+                    var direction = that.getDirection($(this), event);
+                    if (event.type === 'mouseenter') {
+                        //check if the previous overlay still exists before we create it
+                        var $overlay = $overlayContainer.find('.sliphover-overlay');
+                        if (!$overlay.length) {
+                            $overlay = that.createOverlay(that, direction, $element);
+                            //put the overlay into the container
+                            $(this).html($overlay);
+                        }
+                        that.slideIn(that, $overlay);
+                    } else {
+                        //slide out based on the direction
+                        that.removeOverlay(that, $(this), direction);
+                    }
+                });
             });
         },
         createContainer: function($element) {
@@ -72,7 +81,8 @@
 
             return $overlayContainer;
         },
-        createOverlay: function(instance, $overlayContainer, direction, $element) {
+        createOverlay: function(instance, direction, $element) {
+
             var initClass, $overlay, content;
 
             switch (direction) {
@@ -100,10 +110,9 @@
                     backgroundColor: instance.settings.backgroundColor
                 })
                 .html(content);
-
-            $overlayContainer.html($overlay);
-
-            //slide in
+            return $overlay;
+        },
+        slideIn: function(instance, $overlay) {
             $overlay.stop().animate({
                 top: 0,
                 left: 0
