@@ -33,53 +33,79 @@
 
     SlipHover.prototype = {
         init: function() {
-            //steps to implement this awesome plugin
-            //step 1: find all targets specified by the target option
-            //step 2: get the mouse event type(enter or leave) and direction
-            //step 3: based on the result from step 2,dynamically create an absolute positioned container aside the target
-            //step 4: fill the container with content specified by the caption option
-            //step 5: apply animation to the overlay to slide it in if mouse enter or slide out when mouse leave
-            //step 6: remove all stuff when slide out
             var that = this,
                 target = this.target || 'img'; //if the given value if not valid, use img by default
             $(this.element).off('mouseenter.sliphover mouseout.sliphover', target)
                 .on('mouseenter.sliphover mouseout.sliphover', target, function(event) {
                     var $element = $(event.target),
-                        overlay = that.createOverlay($element),
+                        //$overlayContainer = that.createContainer($element),
                         direction = that.getDirection($element, event);
-                    that.applyAnimation(direction, $element, event);
+
+                    if (event.type == 'mouseenter') {
+                        //create overlay and slide in
+                        //that.createOverlay(that, $overlayContainer, direction, $element);
+                        console.log('overlay created');
+                    } else {
+                        //slide out and remove the overlay
+                        var overlayId = $element.data('sliphover_overlay');
+                        console.log($('#' + overlayId));
+                        $('#' + overlayId).remove();
+                    }
                 });
         },
-        getDirection: function($target, event) {
-            //reference: http://stackoverflow.com/questions/3627042/jquery-animation-for-a-hover-with-mouse-direction
-            var w = $target.width(),
-                h = $target.height(),
-                x = (event.pageX - $target.offset().left - (w / 2)) * (w > h ? (h / w) : 1),
-                y = (event.pageY - $target.offset().top - (h / 2)) * (h > w ? (w / h) : 1),
-                direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4;
-            return direction;
-        },
-        createOverlay: function($element) {
+        createContainer: function($element) {
+            //get the properties of the target
             var top = parseFloat($element.offset().top),
                 left = parseFloat($element.offset().left),
-                border=parseFloat($element.css("border-left-width")),
+                border = parseFloat($element.css("border-left-width")),
                 width = $element.width(),
                 height = $element.height(),
-                zIndex=$element.css("z-index");
-            $('<div/>', {
-                class: 'sliphover-container'
+                zIndex = $element.css("z-index");
+            var $overlayContainer = $('<div/>', {
+                class: 'sliphover-container',
+                id: new Date().getTime()
             }).css({
                 width: width,
                 height: height,
                 position: 'absolute',
-                top: (top+border)+'px',
-                left: (left+border)+'px',
-                zIndex:zIndex+1,
-                backgroundColor:'rgba(0,0,0,.5)'
+                top: (top + border) + 'px',
+                left: (left + border) + 'px',
+                zIndex: zIndex + 1,
+                backgroundColor: 'rgba(0,0,0,.5)'
             }).insertBefore($element);
+            $element.data('sliphover_overlay', $overlayContainer.attr('id'));
+
+            return $overlayContainer;
 
         },
-        removeOverlay:function($element){
+        createOverlay: function(instance, $overlayContainer, direction, $element) {
+            var initClass, $overlay, content;
+
+            switch (direction) {
+                case 0: //from top
+                    initClass = 'sliphover-top'
+                    break;
+                case 1: //from right
+                    initClass = 'sliphover-right'
+                    break;
+                case 2: //from bottom
+                    initClass = 'sliphover-bottom'
+                    break;
+                case 3: //from left
+                    initClass = 'sliphover-left'
+                    break;
+                default:
+                    console.error('error when get direction of the mouse');
+            };
+
+            content = $element.attr(instance.settings.caption);
+            $overlay = $('<div>', {
+                class: initClass
+            }).html(content);
+
+            $overlayContainer.html($overlay);
+        },
+        removeOverlay: function($element) {
 
         },
         applyAnimation: function(direction, $element, event) {
@@ -113,6 +139,15 @@
                     }
                     break;
             };
+        },
+        getDirection: function($target, event) {
+            //reference: http://stackoverflow.com/questions/3627042/jquery-animation-for-a-hover-with-mouse-direction
+            var w = $target.width(),
+                h = $target.height(),
+                x = (event.pageX - $target.offset().left - (w / 2)) * (w > h ? (h / w) : 1),
+                y = (event.pageY - $target.offset().top - (h / 2)) * (h > w ? (w / h) : 1),
+                direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4;
+            return direction;
         }
     };
 
