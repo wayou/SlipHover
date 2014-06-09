@@ -9,7 +9,7 @@
 	<body>
 		<div class="wrapper" >
 			<ul>
-				<li>
+				<!-- <li>
 					<img src="img/1.jpg" title="hello world!" />
 				</li>
 				<li>
@@ -29,15 +29,28 @@
 				</li>
 				<li>
 					<img id="test" src="img/7.jpg" alt="">
-				</li>
+				</li> -->
 			</ul>
-			<button id="addPic">add</button>
+			<!-- <button id="addPic">add</button> -->
 		</div>
 		<script src="../src/jquery-2.0.0.min.js"></script>
 		<script src="../src/jquery.sliphover.js"></script>
+		<script src="js/randomColor.js"></script>
 		<script>
 			$(function() {
-				$(".wrapper").sliphover();
+
+				var colors=randomColor({
+				   luminosity: 'light',
+				   hue: 'random',
+				   count:15
+				});
+				for (var i = colors.length - 1; i >= 0; i--) {
+					var element=$('<div class="sample" data-title="'+colors[i]+'">').css({backgroundColor:colors[i]}),
+					li=$('<li>').html(element);
+					$('.wrapper').find('ul').append(li);
+				};
+
+				$(".wrapper").sliphover({target:'.sample',caption:'data-title',reverse:true});
 
 				$('#addPic').on('click',function(e){
 					$('.wrapper').find('ul').append('<li><img src="img/8.jpg" alt=""></li>');

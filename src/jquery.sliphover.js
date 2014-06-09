@@ -18,6 +18,7 @@
             fontColor: '#fff',
             backgroundColor: 'rgba(0,0,0,.5)', //specify the background color and opacity using rgba
             reverse: false, //reverse the direction
+            withBorder: true, //whether the overlay should cover the border of the target
             flip: false, //true to enable the 3d flip animation
             autoScroll: true, //whether auto scroll to show the caption when it is overflow
             scrollSpeed: 40, //if autoScroll is true, this option specify the scroll speed, the smaller the fast
@@ -46,6 +47,10 @@
                 $overlayContainer.off('mouseenter.sliphover mouseleave.sliphover').on('mouseenter.sliphover mouseleave.sliphover', function(event) {
                     //if (!$overlayContainer) return;
                     var direction = that.getDirection($(this), event);
+
+                    //check if reverse option is on
+                    direction = that.settings.reverse ? direction = (direction + 2) % 4 : direction;
+
                     if (event.type === 'mouseenter') {
                         //check if the previous overlay still exists before we create it
                         var $overlay = $overlayContainer.find('.sliphover-overlay');
@@ -102,7 +107,7 @@
                     window.console.error('error when get direction of the mouse');
             };
 
-            content = $element.attr(instance.settings.caption);
+            content = $element.prop(instance.settings.caption);
             $overlay = $('<div>', {
                 class: 'sliphover-overlay ' + initClass
             })
