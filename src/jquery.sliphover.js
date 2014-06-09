@@ -18,7 +18,6 @@
             fontColor: '#fff',
             backgroundColor: 'rgba(0,0,0,.5)', //specify the background color and opacity using rgba
             reverse: false, //reverse the direction
-            withBorder: true, //whether the overlay should cover the border of the target
             flip: false, //true to enable the 3d flip animation
             autoScroll: true, //whether auto scroll to show the caption when it is overflow
             scrollSpeed: 40, //if autoScroll is true, this option specify the scroll speed, the smaller the fast
@@ -112,6 +111,7 @@
                 class: 'sliphover-overlay ' + initClass
             })
                 .css({
+                    height: instance.settings.height,
                     backgroundColor: instance.settings.backgroundColor
                 })
                 .html(content);
@@ -119,7 +119,7 @@
         },
         slideIn: function(instance, $overlay) {
             $overlay.stop().animate({
-                top: 0,
+                bottom: 0,
                 left: 0
             }, instance.settings.duration);
         },
@@ -130,25 +130,25 @@
             switch (direction) {
                 case 0: //to top
                     finalState = {
-                        top: '-100%',
+                        bottom: '100%',
                         left: 0
                     };
                     break;
                 case 1: //to right
                     finalState = {
-                        top: 0,
+                        bottom: 0,
                         left: '100%'
                     };
                     break;
                 case 2: //to bottom
                     finalState = {
-                        top: '100%',
+                        bottom: '-100%',
                         left: 0
                     };
                     break;
                 case 3: //to left
                     finalState = {
-                        top: 0,
+                        bottom: 0,
                         left: '-100%'
                     };
                     break;

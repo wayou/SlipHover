@@ -33,7 +33,7 @@
 			</ul>
 			<!-- <button id="addPic">add</button> -->
 		</div>
-		<script src="../src/jquery-2.0.0.min.js"></script>
+		<script src="../src/jquery-1.11.1.min.js"></script>
 		<script src="../src/jquery.sliphover.js"></script>
 		<script src="js/randomColor.js"></script>
 		<script>
@@ -50,7 +50,11 @@
 					$('.wrapper').find('ul').append(li);
 				};
 
-				$(".wrapper").sliphover({target:'.sample',caption:'data-title',reverse:true});
+				$(".wrapper").sliphover({
+					target:'.sample',
+					caption:'data-title',
+					reverse:true
+				});
 
 				$('#addPic').on('click',function(e){
 					$('.wrapper').find('ul').append('<li><img src="img/8.jpg" alt=""></li>');
