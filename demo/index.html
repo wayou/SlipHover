@@ -3,52 +3,62 @@
 	<head>
 		<title>sliphover demo</title>
 		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="../src/sliphover.css">
+
 	</head>
 	<body>
 		<div class="wrapper" >
 			<ul>
-				<li>
-					<img src="img/s (1).jpg" title="<h4>THIS IS THE TITLE</h4><hr><p>and this is the description for the pic</p>" />
+				<!-- <li>
+					<img src="img/1.jpg" title="hello world!" />
 				</li>
 				<li>
-					<img src="img/s (2).jpg" title="hello world!" />
+					<img src="img/2.jpg" title="hello world!" />
 				</li>
 				<li>
-					<img src="img/s (3).jpg" title="hello world!" />
+					<img src="img/3.jpg" title="hello world!" />
 				</li>
 				<li>
-					<img src="img/s (4).jpg" title="hello world!" />
+					<img src="img/4.jpg" title="hello world!" />
 				</li>
 				<li>
-					<img src="img/s (5).jpg" title="hello world!" />
+					<img src="img/5.jpg" title="hello world!" />
 				</li>
 				<li>
-					<img src="img/s (6).jpg" title="hello world!" />
+					<img src="img/6.jpg" title="hello world!" />
 				</li>
 				<li>
-					<img id="test" src="img/s (7).jpg" alt="">
-				</li>
-				<li>
-					<img id="test" src="img/s (8).jpg" alt="">
-				</li>
+					<img id="test" src="img/7.jpg" alt="">
+				</li> -->
 			</ul>
+			<!-- <button id="addPic">add</button> -->
 		</div>
-
-<script type="text" id="template">
-	<h4>{{title}}</h4>
-	<hr>
-	<p>{{description}}</p>
-</script>
-
 		<script src="../src/jquery-1.11.1.min.js"></script>
 		<script src="../src/jquery.sliphover.js"></script>
 		<script src="js/randomColor.js"></script>
 		<script>
 			$(function() {
 
-				$(".wrapper").sliphover({
-					caption:$('#template')
+				var colors=randomColor({
+				   luminosity: 'light',
+				   hue: 'random',
+				   count:15
 				});
+				for (var i = colors.length - 1; i >= 0; i--) {
+					var element=$('<div class="sample" data-title="'+colors[i]+'">').css({backgroundColor:colors[i]}),
+					li=$('<li>').html(element);
+					$('.wrapper').find('ul').append(li);
+				};
+
+				$(".wrapper").sliphover({
+					target:'.sample',
+					caption:'data-title',
+					reverse:true
+				});
+
+				$('#addPic').on('click',function(e){
+					$('.wrapper').find('ul').append('<li><img src="img/8.jpg" alt=""></li>');
+				})
 			});
 		</script>
 	</body>
