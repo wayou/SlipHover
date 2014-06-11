@@ -1,7 +1,7 @@
 /**
  *sliphover v1.2.2
  *issues report https://github.com/wayou/SlipHover/issues?state=open
- *jquery v>1.7
+ *jquery v>=1.7
  *using with isotope, packery etc.
  */
 
@@ -16,6 +16,9 @@
             caption: 'title', //the caption that will display when hover
             duration: 'fast', //specify how long the animation will lasts in milliseconds
             fontColor: '#fff',
+            textAlign: 'center',//display the caption left, center or right
+            verticalMiddle: true,//display the caption vertical middle
+            verticalAlign: 'middle',
             backgroundColor: 'rgba(0,0,0,.5)', //specify the background color and opacity using rgba
             reverse: false, //reverse the direction
             height: '100%' //specify the height of the overlay
@@ -79,7 +82,7 @@
                 position: 'absolute',
                 overflow: 'hidden',
                 top: top,
-                left: left,
+                left: left
             }).insertBefore($element);
 
             return $overlayContainer;
@@ -113,7 +116,17 @@
                     window.console.error('error when get direction of the mouse');
             };
 
-            content = $element.prop(instance.settings.caption);
+
+            //if we want to display content vertical middle, we need to wrap the content into a div and set the style with display table-cell
+            if (instance.settings.verticalMiddle) {
+                content = $('<div>').css({
+                    display: 'table-cell',
+                    verticalAlign: 'middle'
+                }).html($element.prop(instance.settings.caption));
+            } else {
+                content = $element.prop(instance.settings.caption);
+            }
+
             $overlay = $('<div>', {
                 class: 'sliphover-overlay'
             })
@@ -123,6 +136,8 @@
                     position: 'absolute',
                     left: left,
                     bottom: bottom,
+                    display: instance.settings.verticalMiddle ? 'table' : 'inline',
+                    textAlign: instance.settings.textAlign,
                     color: instance.settings.fontColor,
                     backgroundColor: instance.settings.backgroundColor
                 })
@@ -131,8 +146,8 @@
         },
         slideIn: function(instance, $overlay) {
             $overlay.stop().animate({
-                bottom: 0,
-                left: 0
+                left: 0,
+                bottom: 0
             }, instance.settings.duration);
         },
         removeOverlay: function(instance, $overlayContainer, direction) {
