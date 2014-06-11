@@ -3,62 +3,44 @@
 	<head>
 		<title>sliphover demo</title>
 		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="../src/sliphover.css">
-
 	</head>
 	<body>
 		<div class="wrapper" >
 			<ul>
-				<!-- <li>
-					<img src="img/1.jpg" title="hello world!" />
+				<li>
+					<img src="img/pic1.jpg" title="hello world!" />
 				</li>
 				<li>
-					<img src="img/2.jpg" title="hello world!" />
+					<img src="img/pic2.jpg" title="hello world!" />
 				</li>
 				<li>
-					<img src="img/3.jpg" title="hello world!" />
+					<img src="img/pic3.jpg" title="hello world!" />
 				</li>
 				<li>
-					<img src="img/4.jpg" title="hello world!" />
+					<img src="img/pic4.jpg" title="hello world!" />
 				</li>
 				<li>
-					<img src="img/5.jpg" title="hello world!" />
+					<img src="img/pic5.jpg" title="hello world!" />
 				</li>
 				<li>
-					<img src="img/6.jpg" title="hello world!" />
+					<img src="img/pic6.jpg" title="hello world!" />
 				</li>
 				<li>
-					<img id="test" src="img/7.jpg" alt="">
-				</li> -->
+					<img src="img/pic7.jpg" title="hello world!" />
+				</li>
+				<li>
+					<img src="img/pic8.jpg" title="hello world!" />
+				</li>
 			</ul>
-			<!-- <button id="addPic">add</button> -->
 		</div>
 		<script src="../src/jquery-1.11.1.min.js"></script>
 		<script src="../src/jquery.sliphover.js"></script>
 		<script src="js/randomColor.js"></script>
 		<script>
 			$(function() {
-
-				var colors=randomColor({
-				   luminosity: 'light',
-				   hue: 'random',
-				   count:15
-				});
-				for (var i = colors.length - 1; i >= 0; i--) {
-					var element=$('<div class="sample" data-title="'+colors[i]+'">').css({backgroundColor:colors[i]}),
-					li=$('<li>').html(element);
-					$('.wrapper').find('ul').append(li);
-				};
-
 				$(".wrapper").sliphover({
-					target:'.sample',
-					caption:'data-title',
-					reverse:true
+					height:'100px'
 				});
-
-				$('#addPic').on('click',function(e){
-					$('.wrapper').find('ul').append('<li><img src="img/8.jpg" alt=""></li>');
-				})
 			});
 		</script>
 	</body>

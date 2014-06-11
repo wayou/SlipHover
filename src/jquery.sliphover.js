@@ -18,9 +18,6 @@
             fontColor: '#fff',
             backgroundColor: 'rgba(0,0,0,.5)', //specify the background color and opacity using rgba
             reverse: false, //reverse the direction
-            flip: false, //true to enable the 3d flip animation
-            autoScroll: true, //whether auto scroll to show the caption when it is overflow
-            scrollSpeed: 40, //if autoScroll is true, this option specify the scroll speed, the smaller the fast
             height: '100%' //specify the height of the overlay
         };
 
@@ -79,6 +76,8 @@
             }).css({
                 width: width,
                 height: height,
+                position: 'absolute',
+                overflow: 'hidden',
                 top: top,
                 left: left,
             }).insertBefore($element);
@@ -87,20 +86,28 @@
         },
         createOverlay: function(instance, direction, $element) {
 
-            var initClass, $overlay, content;
+            var bottom, left, $overlay, content;
 
             switch (direction) {
-                case 0: //from top
-                    initClass = 'sliphover-top';
+                case 0:
+                    //from top
+                    left = 0;
+                    bottom = '100%';
                     break;
-                case 1: //from right
-                    initClass = 'sliphover-right';
+                case 1:
+                    //from right
+                    left = '100%';
+                    bottom = 0;
                     break;
-                case 2: //from bottom
-                    initClass = 'sliphover-bottom';
+                case 2:
+                    //from bottom
+                    left = 0;
+                    bottom = '-100%';
                     break;
-                case 3: //from left
-                    initClass = 'sliphover-left';
+                case 3:
+                    //from left
+                    left = '-100%';
+                    bottom = 0;
                     break;
                 default:
                     window.console.error('error when get direction of the mouse');
@@ -108,10 +115,15 @@
 
             content = $element.prop(instance.settings.caption);
             $overlay = $('<div>', {
-                class: 'sliphover-overlay ' + initClass
+                class: 'sliphover-overlay'
             })
                 .css({
+                    width: '100%',
                     height: instance.settings.height,
+                    position: 'absolute',
+                    left: left,
+                    bottom: bottom,
+                    color: instance.settings.fontColor,
                     backgroundColor: instance.settings.backgroundColor
                 })
                 .html(content);
