@@ -72,7 +72,7 @@
                 //border = parseFloat($element.css("border-left-width")),
                 width = $element.outerWidth(),
                 height = $element.outerHeight();
-            //zIndex = $element.css("z-index");
+                zIndex = $element.css("z-index");
             var $overlayContainer = $('<div>', {
                 class: 'sliphover-container'
             }).css({
@@ -81,8 +81,11 @@
                 position: 'absolute',
                 overflow: 'hidden',
                 top: top,
-                left: left
-            }).insertBefore($element);
+                left: left,
+                zIndex:zIndex
+            });
+
+            $('body').append($overlayContainer);
 
             return $overlayContainer;
         },
