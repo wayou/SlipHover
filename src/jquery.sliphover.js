@@ -124,9 +124,9 @@
                 content = $('<div>').css({
                     display: 'table-cell',
                     verticalAlign: 'middle'
-                }).html($element.prop(instance.settings.caption));
+                }).html($element.attr(instance.settings.caption));
             } else {
-                content = $element.prop(instance.settings.caption);
+                content = $element.attr(instance.settings.caption);
             }
 
             $overlay = $('<div>', {

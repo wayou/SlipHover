@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flex layouts demo with freewall</title>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+        <meta name="description" content="Freewall demo for flex layout" />
+        <meta name="keywords" content="javascript, dynamic, grid, layout, jquery plugin, flex layouts"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+    </head>
+    <body>
+        <div class='header'>
+            <h1>Using sliphover with other gallery plugin</h1>
+            <p>This demo shows that using sliphover with other gallery plugin such as <a href="http://vnjs.net/www/project/freewall/">freewall</a>.</p>
+            <p>Resize the window to see that sliphover will still work.</p>
+        </div>
+        <div id="freewall" class="free-wall">
+            <ul>
+                <li>
+                    <img src="img/pic1.jpg" title="sdfsdfsd hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!" />
+                </li>
+                <li>
+                    <img src="img/pic2.jpg" title="<h1>hello world!</h1><hr><p>sdfsd hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello wor</p>" />
+                </li>
+                <li>
+                    <img src="img/pic3.jpg" title="hello world!" />
+                </li>
+                <li>
+                    <img src="img/pic4.jpg" title="hello world!" />
+                </li>
+                <li>
+                    <img src="img/pic5.jpg" title="hello world!" />
+                </li>
+                <li>
+                    <img src="img/pic6.jpg" title="hello world!" />
+                </li>
+                <li>
+                    <img src="img/pic7.jpg" title="hello world!" />
+                </li>
+                <li>
+                    <img src="img/pic8.jpg" title="hello world!" />
+                </li>
+            </ul>
+        </div>
+        <script src="../src/jquery-1.11.1.min.js"></script>
+        <script src="../src/jquery.sliphover.js"></script>
+        <script src="js/freewall.js"></script>
+        <script type="text/javascript">
+        //freewall staff
+        var wall = new freewall("#freewall");
+        wall.reset({
+        	selector: 'li',
+        	animate: true,
+        	onResize: function() {
+        		wall.fitWidth();
+        	}
+        });
+        var images = wall.container.find('.brick');
+        images.find('img').load(function() {
+        	wall.fitWidth();
+        });
+                //call sliphover plugin
+                $('#freewall').sliphover();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>using sliphover with other plugin</title>
+        <link rel="stylesheet" href="css/wookmark.css">
+    </head>
+    <body>
+    <style>
+    .item{
+        width:200px;
+        height:200px;
+        display: inline-block;
+        -webkit-transition: all 0.3s ease-out;
+    }
+    </style>
+        <div id="container">
+        </div>
+        <script src="../src/jquery-1.11.1.min.js"></script>
+        <script src="js/randomColor.js"></script>
+        <script src="../src/jquery.sliphover.js"></script>
+        <script>
+             $(function() {
+
+             var $fragment = $('<div>'),
+                 temp, colors = randomColor({
+                     luminosity: 'light',
+                     count: 20
+                 });
+
+             $.each(colors, function(i, v) {
+                 temp = $('<div>', {
+                     class: 'item',
+                     'data-caption':v
+                 }).css({
+                     backgroundColor: v
+                 });
+                 $fragment.append(temp);
+             })
+             $('#container').append($fragment);
+             
+             //call sliphover
+             $('#container').sliphover({
+                target:'.item',
+                caption:'data-caption'
+             });
+
+         });
+        </script>
+    </body>
+</html>
