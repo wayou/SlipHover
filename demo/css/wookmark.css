@@ -50,13 +50,6 @@ header p {
   padding: 4px;
 }
 
-  #tiles li {
-      -webkit-transition: all 0.3s ease-out;
-         -moz-transition: all 0.3s ease-out;
-           -o-transition: all 0.3s ease-out;
-              transition: all 0.3s ease-out;
-    }
-
 #tiles li.inactive {
   visibility: hidden;
   opacity: 0;
@@ -65,19 +58,6 @@ header p {
 #tiles li img {
   display: block;
 }
-
- /**
-     * Grid items
-     */
-    #tiles li {
-      -moz-box-sizing: border-box;
-           box-sizing: border-box;
-    }
-
-    #tiles li img {
-      width: 100%;
-      height: auto;
-    }
 
 /**
  * Grid item text
