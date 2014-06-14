@@ -1,19 +1,12 @@
-.wrapper {
-    margin: 0 auto;
-    width: 80%;
-    background-color:#ddd;
+.demo{
+
 }
 li {
     list-style-type: none;
     display: inline-block;
 }
-img {
-    height: 200px;
-  /* width: 100%;
-   border:5px solid #999;*/
-}
-.sample{
-	/*width: 200px;
-	height: 200px;*/
-	border: 4px solid #999;
+li a img {
+  height: 200px;
+   border:5px solid #999;
+   margin: 5px;
 }

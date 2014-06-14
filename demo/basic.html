@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>using sliphover with wookmark</title>
+    <meta name="description" content="An very basic example of how to use the Wookmark jQuery plug-in.">
+    <meta name="author" content="Christoph Ono, Sebastian Helzle">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+     <header>
+            <h1>basic usage of sliphover</h1>
+            <p>sliphover is pretty nice for image gallery</a> </p>
+        </header>
+        <div id="container">
+            <ul >
+                <li>
+                <a href="#">
+                    <img src="img/1.jpg" title="this is a normal caption" />
+                </a>
+                </li>
+                <li>
+                 <a href="#">
+                    <img src="img/2.jpg" title="this is a normal caption" />
+                </a>
+                </li>
+                <li>
+                <a href="#">
+                    <img src="img/3.jpg" title="description for this image" />
+                </a>
+                </li>
+                <li>
+                <a href="#">
+                    <img src="img/4.jpg" title="description for this image" />
+                </a>
+                </li>
+                <li>
+                <a href="#">
+                    <img src="img/5.jpg" title="description for this image" />
+                </a>
+                </li>
+                <li>
+                <a href="#">
+                    <img src="img/6.jpg" title="description for this image" />
+                </a>
+                </li>
+                <li>
+                <a href="#">
+                    <img src="img/7.jpg" title="description for this image" />
+                </a>
+                </li>
+                <li>
+                <a href="#">
+                    <img src="img/8.jpg" title="description for this image" />
+                </a>
+                </li>
+            </ul>
+        </div>
+        <footer>
+        </footer>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="../src/jquery.sliphover.js"></script>
+    <script type="text/javascript">
+       $(function(){
+         //call sliphover
+            $('#container').sliphover({
+                caption:'title'
+            });
+       })
+    </script>
+</body>
+</html>

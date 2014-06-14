@@ -16,11 +16,12 @@
             caption: 'title', //the caption that will display when hover
             duration: 'fast', //specify how long the animation will lasts in milliseconds
             fontColor: '#fff',
-            textAlign: 'center',//display the caption left, center or right
-            verticalMiddle: true,//display the caption vertical middle or not
+            textAlign: 'center', //display the caption left, center or right
+            verticalMiddle: true, //display the caption vertical middle or not
             backgroundColor: 'rgba(0,0,0,.5)', //specify the background color and opacity using rgba
             reverse: false, //reverse the direction
-            height: '100%' //specify the height of the overlay
+            height: '100%', //specify the height of the overlay
+            enableLink: true //if you wrap image with <a> tag, the overlay will be a link too
         };
 
     function SlipHover(element, options) {
@@ -72,7 +73,7 @@
                 //border = parseFloat($element.css("border-left-width")),
                 width = $element.outerWidth(),
                 height = $element.outerHeight();
-                zIndex = $element.css("z-index");
+            zIndex = $element.css("z-index");
             var $overlayContainer = $('<div>', {
                 class: 'sliphover-container'
             }).css({
@@ -82,7 +83,7 @@
                 overflow: 'hidden',
                 top: top,
                 left: left,
-                zIndex:zIndex
+                zIndex: zIndex == +zIndex ? (zIndex + 1) : 999 // if the z-index of the target is not number then use 999
             });
 
             $('body').append($overlayContainer);
@@ -118,7 +119,6 @@
                     window.console.error('error when get direction of the mouse');
             };
 
-
             //if we want to display content vertical middle, we need to wrap the content into a div and set the style with display table-cell
             if (instance.settings.verticalMiddle) {
                 content = $('<div>').css({
@@ -129,20 +129,29 @@
                 content = $element.attr(instance.settings.caption);
             }
 
-            $overlay = $('<div>', {
-                class: 'sliphover-overlay'
+            if (instance.settings.enableLink) {
+                var url = $element.parent('a').attr('href');
+                $overlay = $('<a>', {
+                    class: 'sliphover-overlay',
+                    href: url || '#'
+                });
+            } else {
+                $overlay = $(overlayType, {
+                    class: 'sliphover-overlay'
+                });
+            }
+
+            $overlay.css({
+                width: '100%',
+                height: instance.settings.height,
+                position: 'absolute',
+                left: left,
+                bottom: bottom,
+                display: instance.settings.verticalMiddle ? 'table' : 'inline',
+                textAlign: instance.settings.textAlign,
+                color: instance.settings.fontColor,
+                backgroundColor: instance.settings.backgroundColor
             })
-                .css({
-                    width: '100%',
-                    height: instance.settings.height,
-                    position: 'absolute',
-                    left: left,
-                    bottom: bottom,
-                    display: instance.settings.verticalMiddle ? 'table' : 'inline',
-                    textAlign: instance.settings.textAlign,
-                    color: instance.settings.fontColor,
-                    backgroundColor: instance.settings.backgroundColor
-                })
                 .html(content);
             return $overlay;
         },

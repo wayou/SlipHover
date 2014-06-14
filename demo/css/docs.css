@@ -1,0 +1,124 @@
+#spacer {
+  padding-top: 60px;
+}
+
+.affix {
+  z-index: 900;
+}
+
+@media(max-width:767px) {
+  #spacer {
+    padding-top: 0;
+  }
+  .affix {
+    position: static;
+    width: auto;
+    top: 0;
+  }
+}
+
+.label.important {
+  background-color: #c43c35;
+}
+
+
+div.heading {
+border:1px solid transparent;
+float:none;
+clear:both;
+overflow:hidden;
+display:block;
+margin:0;
+}
+
+div.heading .url {
+-o-border-radius:3px;
+-ms-border-radius:3px;
+-moz-border-radius:3px;
+-khtml-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+clear:none;
+color:#000;
+display:block;
+line-height:1.1em;
+overflow-x:scroll;
+white-space:nowrap;
+margin:0;
+padding:8px;
+}
+
+div.heading .url span {
+margin:0;
+padding:0;
+}
+
+div.heading .url span.path {
+font-family:Menlo, Monaco, "Courier New", monospace;
+font-size:12px;
+}
+
+div.heading .url span.path a {
+  text-decoration: none;
+  color: black;
+  pointer-events: none;
+  cursor: default;
+}
+
+div.heading .url span.http_method {
+color:#FFF;
+text-transform:uppercase;
+text-decoration:none;
+display:inline-block;
+width:50px;
+font-size:.7em;
+margin-right:10px;
+text-align:center;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+-o-border-radius:2px;
+-ms-border-radius:2px;
+-khtml-border-radius:2px;
+border-radius:2px;
+padding:3px 0;
+}
+
+div.heading .url.GET {
+background-color:#E7F0F7;
+border:1px solid #000;
+border-color:#C3D9EC;
+}
+
+div.heading .url.GET span.http_method {
+background-color:#0f6ab4;
+}
+
+div.heading .url.POST {
+background-color:#E7F6EC;
+border:1px solid #000;
+border-color:#C3E8D1;
+}
+
+div.heading .url.POST span.http_method {
+background-color:#10a54a;
+}
+
+div.heading .url.PUT,div.heading .url.LOCK,div.heading .url.UNLOCK,div.heading .url.ENABLE,div.heading .url.DISABLE,div.heading .url.RELOAD {
+background-color:#f9f2e9;
+border:1px solid #000;
+border-color:#f0e0ca;
+}
+
+div.heading .url.PUT span.http_method,div.heading .url.LOCK span.http_method,div.heading .url.UNLOCK span.http_method,div.heading .url.ENABLE span.http_method,div.heading .url.DISABLE span.http_method,div.heading .url.RELOAD span.http_method {
+background-color:#c5862b;
+}
+
+div.heading .url.DELETE {
+background-color:#f5e8e8;
+border:1px solid #000;
+border-color:#e8c6c7;
+}
+
+div.heading .url.DELETE span.http_method {
+background-color:#a41e22;
+}

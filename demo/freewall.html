@@ -16,29 +16,53 @@
         </div>
         <div id="freewall" class="free-wall">
             <ul>
-                <li>
-                    <img src="img/pic1.jpg" title="sdfsdfsd hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!" />
+                 <li>
+                    <img src="img/1.jpg" data-title="this is a normal caption" />
                 </li>
                 <li>
-                    <img src="img/pic2.jpg" title="<h1>hello world!</h1><hr><p>sdfsd hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello wor</p>" />
+                    <img src="img/2.jpg" data-title="<h1>Title</h1><hr><p>this is a caption with HTML code, so you can customize by writing any HTML you want</p>" />
                 </li>
                 <li>
-                    <img src="img/pic3.jpg" title="hello world!" />
+                    <img src="img/3.jpg" data-title="with html, you can put <a href='#'>link</a>,<button>button</button> or any other element you want" />
                 </li>
                 <li>
-                    <img src="img/pic4.jpg" title="hello world!" />
+                    <img src="img/4.jpg" data-title="description for this image" />
                 </li>
                 <li>
-                    <img src="img/pic5.jpg" title="hello world!" />
+                    <img src="img/5.jpg" data-title="description for this image" />
                 </li>
                 <li>
-                    <img src="img/pic6.jpg" title="hello world!" />
+                    <img src="img/6.jpg" data-title="description for this image" />
                 </li>
                 <li>
-                    <img src="img/pic7.jpg" title="hello world!" />
+                    <img src="img/7.jpg" data-title="description for this image" />
                 </li>
                 <li>
-                    <img src="img/pic8.jpg" title="hello world!" />
+                    <img src="img/8.jpg" data-title="description for this image" />
+                </li>
+                <li>
+                    <img src="img/1.jpg" data-title="this is a normal caption" />
+                </li>
+                <li>
+                    <img src="img/2.jpg" data-title="description for this image" />
+                </li>
+                <li>
+                    <img src="img/3.jpg" data-title="description for this image" />
+                </li>
+                <li>
+                    <img src="img/4.jpg" data-title="description for this image" />
+                </li>
+                <li>
+                    <img src="img/5.jpg" data-title="description for this image" />
+                </li>
+                <li>
+                    <img src="img/6.jpg" data-title="description for this image" />
+                </li>
+                <li>
+                    <img src="img/7.jpg" data-title="description for this image" />
+                </li>
+                <li>
+                    <img src="img/8.jpg" data-title="description for this image" />
                 </li>
             </ul>
         </div>
@@ -48,6 +72,7 @@
         <script type="text/javascript">
         //freewall staff
         var wall = new freewall("#freewall");
+        wall.fitWidth();
         wall.reset({
         	selector: 'li',
         	animate: true,
@@ -60,7 +85,9 @@
         	wall.fitWidth();
         });
                 //call sliphover plugin
-                $('#freewall').sliphover();
+                $('#freewall').sliphover({
+                    caption:'data-title'
+                });
         </script>
     </body>
 </html>

@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>jQuery Wookmark Plug-in Example</title>
+    <title>using sliphover with wookmark</title>
     <meta name="description" content="An very basic example of how to use the Wookmark jQuery plug-in.">
     <meta name="author" content="Christoph Ono, Sebastian Helzle">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -19,49 +19,80 @@
         */
         #tiles li img {
         width: 100%;
-        height: auto;
         }
     </style>
 </head>
 <body>
     <div id="container">
         <header>
-            <h1>jQuery Wookmark Plug-in Example</h1>
-            <p>Flexible: columns resize to fill the container without exceeding a maximum width.</p>
+            <h1>using sliphover with ohter plugins</h1>
+            <p>This demo shows that sliphover can work well with other image gallery plugins such as <a href="http://www.wookmark.com/jquery-plugin">wookmark</a> </p>
         </header>
         <div id="main" role="main">
             <ul id="tiles">
                 <li>
-                    <img src="img/pic1.jpg" title="sdfsdfsd hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!" />
-                    <p>1</p>
+                    <img src="img/1.jpg" data-title="this is a normal caption" />
+                    <p>some text</p>
                 </li>
                 <li>
-                    <img src="img/pic2.jpg" title="<h1>hello world!</h1><hr><p>sdfsd hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello wor</p>" />
-                    <p>2</p>
+                    <img src="img/2.jpg" data-title="<h1>Title</h1><hr><p>this is a caption with HTML code, so you can customize by writing any HTML you want</p>" />
+                    <p>some text</p>
                 </li>
                 <li>
-                    <img src="img/pic3.jpg" title="hello world!" />
-                    <p>3</p>
+                    <img src="img/3.jpg" data-title="with html, you can put <a href='#'>link</a>,<button>button</button> or any other element you want" />
+                    <p>some text</p>
                 </li>
                 <li>
-                    <img src="img/pic4.jpg" title="hello world!" />
-                    <p>4</p>
+                    <img src="img/4.jpg" data-title="description for this image" />
+                    <p>some text</p>
                 </li>
                 <li>
-                    <img src="img/pic5.jpg" title="hello world!" />
-                    <p>5</p>
+                    <img src="img/5.jpg" data-title="description for this image" />
+                    <p>some text</p>
                 </li>
                 <li>
-                    <img src="img/pic6.jpg" title="hello world!" />
-                    <p>6</p>
+                    <img src="img/6.jpg" data-title="description for this image" />
+                    <p>some text</p>
                 </li>
                 <li>
-                    <img src="img/pic7.jpg" title="hello world!" />
-                    <p>7</p>
+                    <img src="img/7.jpg" data-title="description for this image" />
+                    <p>some text</p>
                 </li>
                 <li>
-                    <img src="img/pic8.jpg" title="hello world!" />
-                    <p>8</p>
+                    <img src="img/8.jpg" data-title="description for this image" />
+                    <p>some text</p>
+                </li>
+                <li>
+                    <img src="img/1.jpg" data-title="this is a normal caption" />
+                    <p>some text</p>
+                </li>
+                <li>
+                    <img src="img/2.jpg" data-title="description for this image" />
+                    <p>some text</p>
+                </li>
+                <li>
+                    <img src="img/3.jpg" data-title="description for this image" />
+                    <p>some text</p>
+                </li>
+                <li>
+                    <img src="img/4.jpg" data-title="description for this image" />
+                    <p>some text</p>
+                </li>
+                <li>
+                    <img src="img/5.jpg" data-title="description for this image" />
+                    <p>some text</p>
+                </li>
+                <li>
+                    <img src="img/6.jpg" data-title="description for this image" />
+                    <p>some text</p>
+                </li>
+                <li>
+                    <img src="img/7.jpg" data-title="description for this image" />
+                    <p>some text</p>
+                </li>
+                <li>
+                    <img src="img/8.jpg" data-title="description for this image" />
+                    <p>some text</p>
                 </li>
             </ul>
         </div>
@@ -104,7 +135,9 @@
             handler.wookmark(options);
 
             //call sliphover
-            $('#tiles').sliphover();
+            $('#tiles').sliphover({
+                caption:'data-title'
+            });
         });
         })(jQuery);
     </script>
