@@ -18,10 +18,10 @@
             fontColor: '#fff',
             textAlign: 'center', //display the caption left, center or right
             verticalMiddle: true, //display the caption vertical middle or not
-            backgroundColor: 'rgba(0,0,0,.5)', //specify the background color and opacity using rgba
+            backgroundColor: 'rgba(0,0,0,.7)', //specify the background color and opacity using rgba
             reverse: false, //reverse the direction
             height: '100%', //specify the height of the overlay
-            enableLink: true //if you wrap image with <a> tag, the overlay will be a link too
+            withLink: true //if image is wraped with a link the overlay will be clickable, set false to disable click
         };
 
     function SlipHover(element, options) {
@@ -92,7 +92,7 @@
         },
         createOverlay: function(instance, direction, $element) {
 
-            var bottom, left, $overlay, content;
+            var bottom, left, $overlay, content,$targetAParent;
 
             switch (direction) {
                 case 0:
@@ -128,15 +128,17 @@
             } else {
                 content = $element.attr(instance.settings.caption);
             }
-
-            if (instance.settings.enableLink) {
-                var url = $element.parent('a').attr('href');
+            $targetAParent = $element.parent('a');
+            if ($targetAParent.length && instance.settings.withLink) {
+                var url = $targetAParent.attr('href');
                 $overlay = $('<a>', {
                     class: 'sliphover-overlay',
                     href: url || '#'
+                }).css({
+                    textDecoration: 'none'
                 });
             } else {
-                $overlay = $(overlayType, {
+                $overlay = $('<div>', {
                     class: 'sliphover-overlay'
                 });
             }
