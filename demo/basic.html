@@ -1,34 +1,44 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>using sliphover with wookmark</title>
-    <meta name="description" content="An very basic example of how to use the Wookmark jQuery plug-in.">
-    <meta name="author" content="Christoph Ono, Sebastian Helzle">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <title>sliphover</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/prettify.css">
+    <link rel="stylesheet" href="css/docs.css">
     <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-     <header>
-            <h1>basic usage of sliphover</h1>
-            <p>sliphover is pretty nice for image gallery</a> </p>
-        </header>
-        <div id="container">
-            <ul >
+  </head>
+</html>
+<body data-spy="scroll" data-target="#docs-navbar" data-offset="81">
+  <div class="container">
+    <div class="row">
+      <div class="span2">
+        <div id="docs-navbar" data-spy="affix">
+          <div class="row">
+            <div class="span2">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span10">
+<p>basic usage of sliphover</p>
+
+<!-- demo begin -->
+<div class="demo" id="container">
+  <ul>
+    <li>
+                    <a href="#"><img src="img/1.jpg" title="this is a normal caption" /></a>
+                </li>
                 <li>
-                <a href="#">
-                    <img src="img/1.jpg" title="this is a normal caption" />
+                <a href="#" >
+                    <img src="img/2.jpg" title="description goes here" />
                 </a>
                 </li>
                 <li>
-                 <a href="#">
-                    <img src="img/2.jpg" title="this is a normal caption" />
-                </a>
-                </li>
-                <li>
                 <a href="#">
-                    <img src="img/3.jpg" title="description for this image" />
+                    <img src="img/3.jpg" title="with html, you can put link, button or any other element you want" />
                 </a>
                 </li>
                 <li>
@@ -56,19 +66,29 @@
                     <img src="img/8.jpg" title="description for this image" />
                 </a>
                 </li>
-            </ul>
-        </div>
-        <footer>
-        </footer>
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="../src/jquery.sliphover.js"></script>
-    <script type="text/javascript">
-       $(function(){
-         //call sliphover
-            $('#container').sliphover({
-                caption:'title'
-            });
-       })
-    </script>
+                <li>
+                <a href="#">
+                    <img src="img/9.jpg" title="description for this image" />
+                </a>
+                </li>
+                 <li>
+                 <a href="#">
+                    <img src="img/10.jpg" title="description for this image" />
+                 </a>
+                </li>
+  </ul>
+</div>
+<!-- demo end -->
+
+      </div>
+    </div>
+  </div>
+  <script src="js/vendor/jquery.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="js/vendor/prettify.js"></script>
+  <script src="js/vendor/jquery.ba-hashchange.js"></script>
+  <script src="js/vendor/jquery.scrollTo.js"></script>
+  <script src="js/vendor/bootstrap-adjust-hash.js"></script>
+  <script src="../src/jquery.sliphover.js"></script>
+  <script src="js/main.js"></script>
 </body>
-</html>

@@ -1,6 +1,12 @@
 #docs-navbar{
 	margin-top:50px;
 }
+
+#container{
+	width: 970px;
+	margin: 0 auto;
+}
+
 .demo li {
     list-style-type: none;
     display: inline-block;
