@@ -1,46 +1,42 @@
 {
-	"name": "boilerplate",
-	"title": "jQuery Boilerplate",
-	"description": "A jump-start for jQuery plugins development.",
-	"keywords": [
-		"jquery",
-		"boilerplate",
-		"plugins"
-	],
-	"version": "3.3.3",
-	"author": {
-		"name": "Zeno Rocha",
-		"email": "zno.rocha@gmail.com",
-		"url": "https://github.com/zenorocha"
-	},
-	"maintainers": [
-		{
-			"name": "Zeno Rocha",
-			"email": "zno.rocha@gmail.com",
-			"url": "https://github.com/zenorocha"
-		},
-		{
-			"name": "Addy Osmani",
-			"email": "addyosmani@gmail.com",
-			"url": "https://github.com/addyosmani"
-		},
-		{
-		  "name": "Helder Santana",
-		  "email": "heldr@me.com",
-		  "url": "https://github.com/heldr"
-		}
-	],
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://zenorocha.mit-license.org/"
-		}
-	],
-	"bugs": "https://github.com/jquery-boilerplate/boilerplate/issues",
-	"homepage": "http://jqueryboilerplate.com",
-	"docs": "https://github.com/jquery-boilerplate/boilerplate#readme",
-	"download": "https://github.com/jquery-boilerplate/boilerplate/archive/master.zip",
-	"dependencies": {
-		"jquery": ">=1.4"
-	}
+    "name": "sliphover",
+    "title": "SlipHover",
+    "description": "Apply direction aware  2D/3D hover effect to images",
+    "keywords": [
+        "direction-aware",
+        "animation",
+        "effect",
+        "hover",
+        "image",
+        "caption",
+        "overlay",
+        "gallery"
+    ],
+    "version": "2.0.0",
+    "author": {
+        "name": "wayou",
+        "email": "liuwayong@gmail.com",
+        "url": "https://github.com/wayou"
+    },
+    "maintainers": [
+        {
+            "name": "wayou",
+            "email": "liuwayong@gmail.com",
+            "url": "https://github.com/wayou"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/jquery/jquery-color/blob/2.1.2/MIT-LICENSE.txt"
+        }
+    ],
+    "bugs": "https://github.com/wayou/sliphover/issues",
+    "homepage": "http://wayou.github.io/SlipHover/",
+    "docs": "http://wayou.github.io/SlipHover/",
+    "demo":"http://wayou.github.io/SlipHover/",
+    "download": "https://github.com/wayou/SlipHover/zipball/master",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
 }
