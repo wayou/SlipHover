@@ -1,13 +1,11 @@
 /**
- *sliphover v1.2.2
- *issues report https://github.com/wayou/SlipHover/issues?state=open
- *jquery v>=1.7
- *using with isotope, packery etc.
+ *sliphover v2.0.0
+ *require jquery 1.7+
+ * wayou June 24, 2014
+ *for more info pls visit :https://github.com/wayou/SlipHover
  */
 
-;
-(function($, window, document, undefined) {
-
+;(function($, window, document, undefined) {
 
     // Create the defaults once
     var pluginName = "sliphover",
@@ -92,7 +90,7 @@
         },
         createOverlay: function(instance, direction, $element) {
 
-            var bottom, left, $overlay, content,$targetAParent;
+            var bottom, left, $overlay, content, $targetAParent;
 
             switch (direction) {
                 case 0:
