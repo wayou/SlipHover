@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>background color option of sliphover</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body >
+    <div class="wrapper">
+    
+        <!-- demo begin -->
+        <div class="demo" id="container">
+            <ul>
+                <li>
+                    <a href="#"><img src="img/1.jpg" title="this is a normal caption" /></a>
+                </li>
+                 <li>
+                    <a href="#" >
+                    <img src="img/2.jpg" title="<h3>custom the caption</h3><hr/><p>with html, you can put link, button or any other element you want </p>" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/3.jpg" title="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/4.jpg" title="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/5.jpg" title="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/6.jpg" title="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/7.jpg" title="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/8.jpg" title="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/9.jpg" title="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/10.jpg" title="description for this image" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- demo end -->
+
+        <div class="des">
+<p>Customize the background color of the overlay.</p>
+
+    </div>
+        <div class="code">
+        <div class="highlight" style="background: #272822"><pre style="line-height: 125%">  <span style="color: #a6e22e">$</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">function</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+
+      <span style="color: #a6e22e">$</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;#container&#39;</span><span style="color: #f8f8f2">).</span><span style="color: #a6e22e">sliphover</span><span style="color: #f8f8f2">({</span>
+          <span style="color: #a6e22e">backgroundColor</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;#f14&#39;</span>
+      <span style="color: #f8f8f2">});</span>
+
+  <span style="color: #f8f8f2">})</span>
+</pre></div>
+    </div>
+    </div>
+    
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="../src/jquery.sliphover.js"></script>
+
+        <script type="text/javascript">
+          $(function(){
+        
+        $('#container').sliphover({
+            backgroundColor:'#f14'
+        });
+        })
+        </script>
+    </body>
+</html>
