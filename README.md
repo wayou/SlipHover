@@ -73,7 +73,6 @@ Besides examples in the option table above, there are a few nice demos shows sli
 
 * [working with wookmark](http://wayou.github.io/SlipHover/wookmark.html)
 * [working with freewall](http://wayou.github.io/SlipHover/freewall.html)
-* [working with isolate](http://wayou.github.io/SlipHover/isolate.html)
   
 
 
