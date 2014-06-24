@@ -1,8 +1,9 @@
 /**
- *sliphover v2.0.0
- *require jquery 1.7+
- * wayou June 24, 2014
- *for more info pls visit :https://github.com/wayou/SlipHover
+ * sliphover v2.0.1
+ * require jquery 1.7+
+ * wayou June 24, 2014,
+ * MIT License
+ * for more info pls visit :https://github.com/wayou/SlipHover
  */
 
 ;(function($, window, document, undefined) {
@@ -81,6 +82,7 @@
                 overflow: 'hidden',
                 top: top,
                 left: left,
+                borderRadius:$element.css('border-radius'),//in case the target has a round border, this will make the overlay more nicer
                 zIndex: zIndex == +zIndex ? (zIndex + 1) : 999 // if the z-index of the target is not number then use 999
             });
 
