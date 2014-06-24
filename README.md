@@ -103,7 +103,7 @@ I'm a frontend engineer from China and love doing cool stuff with the web.
 
 ## Changelog
 
-**v2.0.0**
+**v2.0.1**
 
 release: 24 Jun 2014
 
