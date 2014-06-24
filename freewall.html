@@ -1,1 +1,145 @@
-todo
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pinterest-like layouts with freewall</title>
+		<meta content="text/html; charset=utf-8" http-equiv="content-type">
+		<meta name="description" content="Freewall demo for pinterest-like layout" />
+		<meta name="keywords" content="javascript, dynamic, grid, layout, jquery plugin, pinterest like layouts" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/freewall.css" />
+		<link rel="stylesheet" type="text/css" href="css/pinterest-style.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/freewall.js"></script>
+		<script type="text/javascript" src="js/jquery.sliphover.min.js"></script>
+		<style type="text/css">
+			body {
+				background: rgba(231, 231, 231, 0.43);
+			}
+			.free-wall {
+				margin: 15px;
+			}
+			.brick {
+				width: 221.2px;
+			}
+			.info {
+				padding: 15px;
+				color: #333;
+			}
+			.brick img {
+				margin: 0px;
+				padding: 0px;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='header'>
+			<div class="clearfix">
+				<div class="float-left">
+						<div class='target'>using sliphover with <a href="http://vnjs.net/www/project/freewall/">Free Wall</a>. Resize window to see that sliphover will work well with the dynamic layout.</div>
+				</div>
+			</div>
+		</div>
+		<div id="freewall" class="free-wall">
+		    <div class="brick">
+		        <img src="img/1.jpg" width="100%" title="this is the caption">
+		        <div class="info">
+		            <h3>Freewall</h3>
+		            <h5>Pinterest layout</h5>
+		        </div>
+		    </div>
+		    <div class="brick">
+		        <img src="img/2.jpg" width="100%" title="this is the caption">
+		        <div class="info">
+		            <h3>Freewall</h3>
+		            <h5>Pinterest layout</h5>
+		        </div>
+		    </div>
+		    <div class="brick">
+		        <img src="img/3.jpg" width="100%" title="this is the caption">
+		        <div class="info">
+		            <h3>Freewall</h3>
+		            <h5>Pinterest layout</h5>
+		        </div>
+		    </div>
+		    <div class="brick">
+		        <img src="img/4.jpg" width="100%" title="this is the caption">
+		        <div class="info">
+		            <h3>Freewall</h3>
+		            <h5>Pinterest layout</h5>
+		        </div>
+		    </div>
+		    <div class="brick">
+		        <img src="img/5.jpg" width="100%" title="this is the caption">
+		        <div class="info">
+		            <h3>Freewall</h3>
+		            <h5>Pinterest layout</h5>
+		        </div>
+		    </div>
+		    <div class="brick">
+		        <img src="img/6.jpg" width="100%" title="this is the caption">
+		        <div class="info">
+		            <h3>Freewall</h3>
+		            <h5>Pinterest layout</h5>
+		        </div>
+		    </div>
+		    <div class="brick">
+		        <img src="img/7.jpg" width="100%" title="this is the caption">
+		        <div class="info">
+		            <h3>Freewall</h3>
+		            <h5>Pinterest layout</h5>
+		        </div>
+		    </div>
+		    <div class="brick">
+		        <img src="img/8.jpg" width="100%" title="this is the caption">
+		        <div class="info">
+		            <h3>Freewall</h3>
+		            <h5>Pinterest layout</h5>
+		        </div>
+		    </div>
+		    <div class="brick">
+		        <img src="img/9.jpg" width="100%" title="this is the caption">
+		        <div class="info">
+		            <h3>Freewall</h3>
+		            <h5>Pinterest layout</h5>
+		        </div>
+		    </div>
+		    <div class="brick">
+		        <img src="img/10.jpg" width="100%" title="this is the caption">
+		        <div class="info">
+		            <h3>Freewall</h3>
+		            <h5>Pinterest layout</h5>
+		        </div>
+		    </div>
+		    <div class="brick">
+		        <img src="img/11.jpg" width="100%" title="this is the caption">
+		        <div class="info">
+		            <h3>Freewall</h3>
+		            <h5>Pinterest layout</h5>
+		        </div>
+		    </div>
+		</div>
+		
+		<script type="text/javascript">
+			var wall = new freewall("#freewall");
+			wall.reset({
+				selector: '.brick',
+				animate: true,
+				cellW: 200,
+				cellH: 'auto',
+				onResize: function() {
+					wall.fitWidth();
+				}
+			});
+			
+			wall.container.find('.brick img').load(function() {
+				wall.fitWidth();
+			});
+
+			//call sliphover
+			$('#freewall').sliphover();
+
+
+		</script>
+	</body>
+</html>

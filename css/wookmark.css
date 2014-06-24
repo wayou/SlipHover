@@ -47,7 +47,7 @@ header p {
   -webkit-border-radius: 2px;
   display: none; /** Hide items initially to avoid a flicker effect **/
   cursor: pointer;
-  padding: 2px;
+  padding: 4px;
 }
 
 #tiles li.inactive {
