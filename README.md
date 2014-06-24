@@ -1,5 +1,5 @@
 
-# SlipHover <sup>[v2.0.0](https://npmjs.org/package/readme-docs)</sup>
+# SlipHover <sup>[v2.0.1](https://github.com/wayou/SlipHover/releases/tag/v2.0.1)</sup>
 
 You'll love it when you need to display an image gallery.
 
