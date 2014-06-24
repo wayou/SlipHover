@@ -105,6 +105,13 @@ I'm a frontend engineer from China and love doing cool stuff with the web.
 
 **v2.0.0**
 
+release: 24 Jun 2014
+
+- support border-radius
+
+
+**v2.0.0**
+
 release: 15 Jun 2014
 
 - refactor the implementation
