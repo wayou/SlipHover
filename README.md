@@ -8,7 +8,6 @@ SlipHover apply direction aware hover animation for the caption of an image.
 
 ## Index
 
-* [SlipHover](#sliphover)
 * [Download](#download)
 * [Quick start](#quick-start)
 * [Options](#options)
