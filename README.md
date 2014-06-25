@@ -53,13 +53,13 @@ $("#container").sliphover({
 
 | Option          | type          | default          | Description                                      | Example 		|
 |-----------------|---------------|------------------|--------------------------------------------------|-------------	|
-| height          | string        | 100%             | The height of the overlay                        | [view](http://wayou.github.io/SlipHover/target.html) |
-| target          | string        | 'img'            | Specify witch element the overlay will aplly on. | [view](http://wayou.github.io/SlipHover/target.html) |
-| caption         | string        | 'title'          | right-aligned                                    | [view](http://wayou.github.io/SlipHover/caption.html)     |
-| duration        | number/string | 'fast'           | how long will the animation will be              | [view](http://wayou.github.io/SlipHover/duration.html)     |
-| fontColor       | string        | '#fff'           | the color of the text within the overlay         | [view](http://wayou.github.io/SlipHover/fontcolor.html)     |
-| backgroundColor | string        | 'rgba(0,0,0,.5)' | the background color of the overlay              | [view](http://wayou.github.io/SlipHover/backgroundcolor.html)     |
-| reverse         | bool          | false            | whether the animation direction is reversed      | [view](http://wayou.github.io/SlipHover/reverse.html)     |
+| height          | string        | 100%             | The height of the overlay. e.g.`200px`,`50%`                        | [view](http://wayou.github.io/SlipHover/target.html) |
+| target          | string        | 'img'            | Specify witch element the overlay will aplly on. Any valid CSS selector will do.| [view](http://wayou.github.io/SlipHover/target.html) |
+| caption         | string        | 'title'          | Witch attribute will be the content of the overlay. You can use custom HTML5 data attribute. e.g. `data-caption`                                    | [view](http://wayou.github.io/SlipHover/caption.html)     |
+| duration        | number/string | 'fast'           | How long will the animation will be in millisecond, `fast` equals to `200` and `slow` equals to `600`. You can give you own number. e.g.`500`             | [view](http://wayou.github.io/SlipHover/duration.html)     |
+| fontColor       | string        | '#fff'           | The color of the text within the overlay         | [view](http://wayou.github.io/SlipHover/fontcolor.html)     |
+| backgroundColor | string        | 'rgba(0,0,0,.5)' | The background color of the overlay. Any valid CSS color value will do             | [view](http://wayou.github.io/SlipHover/backgroundcolor.html)     |
+| reverse         | bool          | false            | Whether the animation direction is reversed      | [view](http://wayou.github.io/SlipHover/reverse.html)     |
 | textAlign       | string        | 'center'         | the horizon align of the caption                 | [view](http://wayou.github.io/SlipHover/textalign.html)     |
 | verticalMiddle  | bool          | true             | the vertical align of the caption                | [view](http://wayou.github.io/SlipHover/textalign.html)     |
 
