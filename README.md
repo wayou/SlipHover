@@ -91,7 +91,7 @@ Licensed under the MIT License
 
 * Bug reporting, suggestion and feature request, please [open issues](https://github.com/wayou/SlipHover/issues/new) on the project page.
 * Pull request are welcome!
-* see [Sites using SlipHover](https://github.com/wayou/SlipHover/wiki/Sites-using-SlipHover) or add yours
+* see [sites using SlipHover](https://github.com/wayou/SlipHover/wiki/Sites-using-SlipHover) or add yours
 
 
 
