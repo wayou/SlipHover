@@ -95,12 +95,6 @@ Licensed under the MIT License
 
 
 
-**About me**
-
-I'm a frontend engineer from China and love doing cool stuff with the web. 
-* Wayou <liuwayong@gmail.com>
-
-
 ## Changelog
 
 **v2.0.1**
