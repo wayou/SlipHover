@@ -60,8 +60,8 @@ $("#container").sliphover({
 | fontColor       | string        | '#fff'           | The color of the text within the overlay         | [view](http://wayou.github.io/SlipHover/fontcolor.html)     |
 | backgroundColor | string        | 'rgba(0,0,0,.5)' | The background color of the overlay. Any valid CSS color value will do             | [view](http://wayou.github.io/SlipHover/backgroundcolor.html)     |
 | reverse         | bool          | false            | Whether the animation direction is reversed      | [view](http://wayou.github.io/SlipHover/reverse.html)     |
-| textAlign       | string        | 'center'         | the horizon align of the caption                 | [view](http://wayou.github.io/SlipHover/textalign.html)     |
-| verticalMiddle  | bool          | true             | the vertical align of the caption                | [view](http://wayou.github.io/SlipHover/textalign.html)     |
+| textAlign       | string        | 'center'         | The horizon align of the caption                 | [view](http://wayou.github.io/SlipHover/textalign.html)     |
+| verticalMiddle  | bool          | true             | The vertical align of the caption                | [view](http://wayou.github.io/SlipHover/textalign.html)     |
 
 
 
