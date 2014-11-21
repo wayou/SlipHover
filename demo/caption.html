@@ -21,6 +21,56 @@
     
         <!-- demo begin -->
         <div class="demo" id="container">
+        <ul>
+                <li>
+                    <a href="#"><img src="img/1.jpg" data-caption="this is a normal caption" /></a>
+                </li>
+                 <li>
+                    <a href="#" >
+                    <img src="img/2.jpg" data-caption="<h3 style='color:yellow'>custom the caption</h3><hr/><p>with html, you can put link, button or any other element you want </p>" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/3.jpg" data-caption="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/4.jpg" data-caption="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/5.jpg" data-caption="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/6.jpg" data-caption="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/7.jpg" data-caption="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/8.jpg" data-caption="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/9.jpg" data-caption="description for this image" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/10.jpg" data-caption="description for this image" />
+                    </a>
+                </li>
+            </ul>
         </div>
         <!-- demo end -->
 
@@ -29,17 +79,25 @@
 
     </div>
         <div class="code">
-        <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;div</span> <span style="color: #a6e22e">id=</span><span style="color: #e6db74">&quot;container&quot;</span><span style="color: #f92672">&gt;</span>
-    <span style="color: #f92672">&lt;div</span> <span style="color: #a6e22e">class=</span><span style="color: #e6db74">&quot;item&quot;</span> <span style="color: #a6e22e">data-caption=</span><span style="color: #e6db74">&quot;this is the caption&quot;</span><span style="color: #f92672">&gt;&lt;/div&gt;</span>
-    <span style="color: #f92672">&lt;div</span> <span style="color: #a6e22e">class=</span><span style="color: #e6db74">&quot;item&quot;</span> <span style="color: #a6e22e">data-caption=</span><span style="color: #e6db74">&quot;this is the caption&quot;</span><span style="color: #f92672">&gt;&lt;/div&gt;</span>
-    <span style="color: #f92672">&lt;div</span> <span style="color: #a6e22e">class=</span><span style="color: #e6db74">&quot;item&quot;</span> <span style="color: #a6e22e">data-caption=</span><span style="color: #e6db74">&quot;this is the caption&quot;</span><span style="color: #f92672">&gt;&lt;/div&gt;</span>
-    ...
+        <div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;div</span> <span style="color: #a6e22e">class=</span><span style="color: #e6db74">&quot;demo&quot;</span> <span style="color: #a6e22e">id=</span><span style="color: #e6db74">&quot;container&quot;</span><span style="color: #f92672">&gt;</span>
+    <span style="color: #f92672">&lt;ul&gt;</span>
+        <span style="color: #f92672">&lt;li&gt;</span>
+            <span style="color: #f92672">&lt;a</span> <span style="color: #a6e22e">href=</span><span style="color: #e6db74">&quot;#&quot;</span><span style="color: #f92672">&gt;&lt;img</span> <span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;img/1.jpg&quot;</span> <span style="color: #a6e22e">title=</span><span style="color: #e6db74">&quot;this is a normal caption&quot;</span> <span style="color: #f92672">/&gt;&lt;/a&gt;</span>
+        <span style="color: #f92672">&lt;/li&gt;</span>
+        <span style="color: #f92672">&lt;li&gt;</span>
+            <span style="color: #f92672">&lt;a</span> <span style="color: #a6e22e">href=</span><span style="color: #e6db74">&quot;#&quot;</span> <span style="color: #f92672">&gt;</span>
+            <span style="color: #f92672">&lt;img</span> <span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;img/2.jpg&quot;</span> <span style="color: #a6e22e">title=</span><span style="color: #e6db74">&quot;&lt;h3 style=&#39;color:yellow&#39;&gt;custom the caption&lt;/h3&gt;&lt;hr/&gt;&lt;p&gt;with html, you can put link, button or any other element you want &lt;/p&gt;&quot;</span> <span style="color: #f92672">/&gt;</span>
+            <span style="color: #f92672">&lt;/a&gt;</span>
+        <span style="color: #f92672">&lt;/li&gt;</span>
+        ...
+    <span style="color: #f92672">&lt;/ul&gt;</span>
 <span style="color: #f92672">&lt;/div&gt;</span>
 </pre></div>
+
+       
        <div class="highlight" style="background: #272822"><pre style="line-height: 125%"> <span style="color: #a6e22e">$</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">function</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
 
-     <span style="color: #a6e22e">$</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;#container&#39;</span><span style="color: #f8f8f2">).</span><span style="color: #a6e22e">sliphover</span><span style="color: #f8f8f2">({</span>
-         <span style="color: #a6e22e">target</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;.item&#39;</span><span style="color: #f8f8f2">,</span>
+     <span style="color: #a6e22e">$</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;#container&#39;</span><span style="color: #f8f8f2">).</span><span style="color: #a6e22e">sliphover</span><span style="color: #f8f8f2">({</span></span>
          <span style="color: #a6e22e">caption</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;data-caption&#39;</span>
      <span style="color: #f8f8f2">});</span>
  <span style="color: #f8f8f2">})</span>
@@ -54,26 +112,8 @@
         <script type="text/javascript">
           $(function(){
         
-        var $fragment = $('<div>'),
-                 temp, colors = randomColor({
-                     luminosity: 'light',
-                     count: 12
-                 });
-
-             $.each(colors, function(i, v) {
-                 temp = $('<div>', {
-                     class: 'item',
-                     'data-caption':v
-                 }).css({
-                     backgroundColor: v
-                 });
-                 $fragment.append(temp);
-             })
-             $('#container').append($fragment);
-             
              //call sliphover
              $('#container').sliphover({
-                target:'.item',
                 caption:'data-caption'
              });
         })

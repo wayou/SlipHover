@@ -1,0 +1,7 @@
+{
+  "name": "sliphover",
+  "description": "apply direction aware animation caption to images",
+  "author": "wayou",
+  "version": "2.1.0",
+  "main": "src/jquery.sliphover.min.js"
+}
