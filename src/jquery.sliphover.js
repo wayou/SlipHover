@@ -1,5 +1,5 @@
 /**
- * sliphover v2.0.1
+ * sliphover v2.0.2
  * require jquery 1.7+
  * wayou June 24, 2014,
  * MIT License
@@ -28,7 +28,7 @@
         this.settings = $.extend({}, defaults, options);
         this._defaults = defaults;
         this._name = pluginName;
-        this.version = 'v1.2.0';
+        this.version = 'v2.0.2';
         this.init();
     }
 
@@ -39,7 +39,10 @@
 
             //create the overlay container each time the mouse enters
             $(this.element).off('mouseenter.sliphover', target).on('mouseenter.sliphover', target, function(event) {
-                var $element = $(event.target),
+                //fix #9 https://github.com/wayou/SlipHover/issues/9
+                //use this instead of event.target for sometimes the event.target is not retriving the right target we want
+                //http://stackoverflow.com/questions/9838137/event-target-jquery-on-mousedown-up-is-not-giving-the-dom-specified-by-selecto
+                var $element = $(this),
                     $overlayContainer = that.createContainer($element);
 
                 $overlayContainer.off('mouseenter.sliphover mouseleave.sliphover').on('mouseenter.sliphover mouseleave.sliphover', function(event) {
