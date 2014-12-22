@@ -1,5 +1,5 @@
 
-# SlipHover <sup>[v2.0.1](https://github.com/wayou/SlipHover/releases/tag/v2.0.1)</sup>
+# SlipHover <sup>[v2.0.2](https://github.com/wayou/SlipHover/releases/tag/v2.0.2)</sup>
 
 You'll love it when you need to display an image gallery.
 
@@ -96,6 +96,12 @@ Licensed under the MIT License
 
 
 ## Changelog
+
+**v2.0.2**
+
+release: 22 Dec 2014
+
+- fix #9
 
 **v2.0.1**
 
