@@ -6,7 +6,8 @@
  * for more info pls visit :https://github.com/wayou/SlipHover
  */
 
-;(function($, window, document, undefined) {
+;
+(function($, window, document, undefined) {
 
     // Create the defaults once
     var pluginName = "sliphover",
@@ -28,12 +29,18 @@
         this.settings = $.extend({}, defaults, options);
         this._defaults = defaults;
         this._name = pluginName;
-        this.version = 'v2.0.2';
+        this.version = 'v2.0.3';
         this.init();
     }
 
     SlipHover.prototype = {
         init: function() {
+
+            //disable on touch devices
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                return;
+            }
+
             var that = this,
                 target = this.settings.target;
 
@@ -85,7 +92,7 @@
                 overflow: 'hidden',
                 top: top,
                 left: left,
-                borderRadius:$element.css('border-radius'),//in case the target has a round border, this will make the overlay more nicer
+                borderRadius: $element.css('border-radius'), //in case the target has a round border, this will make the overlay more nicer
                 zIndex: zIndex == +zIndex ? (zIndex + 1) : 999 // if the z-index of the target is not number then use 999
             });
 
