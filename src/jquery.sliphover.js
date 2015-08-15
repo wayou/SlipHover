@@ -1,7 +1,6 @@
 /**
- * sliphover v2.0.2
+ * sliphover v2.0.4
  * require jquery 1.7+
- * wayou June 24, 2014,
  * MIT License
  * for more info pls visit :https://github.com/wayou/SlipHover
  */
@@ -140,10 +139,12 @@
             }
             $targetAParent = $element.parent('a');
             if ($targetAParent.length && instance.settings.withLink) {
-                var url = $targetAParent.attr('href');
+                var url = $targetAParent.attr('href'),
+                target=$targetAParent.attr('target');//fix issue#17
                 $overlay = $('<a>', {
                     class: 'sliphover-overlay',
-                    href: url || '#'
+                    href: url || '#',
+                    target: target||'_self'
                 }).css({
                     textDecoration: 'none'
                 });
