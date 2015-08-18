@@ -62,6 +62,7 @@ $("#container").sliphover({
 | reverse         | bool          | false            | Whether the animation direction is reversed      | [view](http://wayou.github.io/SlipHover/reverse.html)     |
 | textAlign       | string        | `'center'`         | The horizon align of the caption                 | [view](http://wayou.github.io/SlipHover/textalign.html)     |
 | verticalMiddle  | bool          | true             | The vertical align of the caption                | [view](http://wayou.github.io/SlipHover/textalign.html)     |
+| withLink  | bool          | true             | if image is wraped with a link the overlay will be clickable, set false to disable click                | [view](http://wayou.github.io/SlipHover/withlink.html)     |
 
 
 
