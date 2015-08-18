@@ -1,5 +1,5 @@
 
-# SlipHover <sup>[v2.0.2](https://github.com/wayou/SlipHover/releases/tag/v2.0.2)</sup>
+# SlipHover <sup>[v2.0.4](https://github.com/wayou/SlipHover/releases/tag/v2.0.2)</sup>
 
 You'll love it when you need to display an image gallery.
 
