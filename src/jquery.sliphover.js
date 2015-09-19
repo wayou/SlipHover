@@ -1,5 +1,5 @@
 /**
- * sliphover v2.0.4
+ * sliphover v2.0.5
  * require jquery 1.7+
  * MIT License
  * for more info pls visit :https://github.com/wayou/SlipHover
@@ -18,6 +18,7 @@
             textAlign: 'center', //display the caption left, center or right
             verticalMiddle: true, //display the caption vertical middle or not
             backgroundColor: 'rgba(0,0,0,.7)', //specify the background color and opacity using rgba
+            backgroundColorAttr: null, //specify the attribute with background color value and opacity using rgba
             reverse: false, //reverse the direction
             height: '100%', //specify the height of the overlay
             withLink: true //if image is wraped with a link the overlay will be clickable, set false to disable click
@@ -28,7 +29,7 @@
         this.settings = $.extend({}, defaults, options);
         this._defaults = defaults;
         this._name = pluginName;
-        this.version = 'v2.0.3';
+        this.version = 'v2.0.5';
         this.init();
     }
 
@@ -101,7 +102,7 @@
         },
         createOverlay: function(instance, direction, $element) {
 
-            var bottom, left, $overlay, content, $targetAParent;
+            var bottom, left, $overlay, $overlayColor, content, $targetAParent;
 
             switch (direction) {
                 case 0:
@@ -154,6 +155,9 @@
                 });
             }
 
+            $overlayColor = instance.settings.backgroundColorAttr ?
+              $element.attr(instance.settings.backgroundColorAttr) : instance.settings.backgroundColor;
+
             $overlay.css({
                 width: '100%',
                 height: instance.settings.height,
@@ -163,7 +167,7 @@
                 display: instance.settings.verticalMiddle ? 'table' : 'inline',
                 textAlign: instance.settings.textAlign,
                 color: instance.settings.fontColor,
-                backgroundColor: instance.settings.backgroundColor
+                backgroundColor: $overlayColor
             })
                 .html(content);
             return $overlay;
