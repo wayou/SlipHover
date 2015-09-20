@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>target option of attribute with sliphover background value</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- demo begin -->
+            <div class="demo" id="container">
+                <ul>
+                    <li>
+                        <a href="#">
+                        <img src="img/1.jpg" title="this is a normal caption" data-background="rgba(120,100,240,0.85)" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" >
+                        <img src="img/2.jpg" title="with html, you can put <a href='#'>link</a> , <input type='button' value='button'> or any other element you want" data-background="rgba(140,100,180,0.85)" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="img/3.jpg" title="description goes here" data-background="rgba(200,130,170,0.85)" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="img/4.jpg" title="description for this image" data-background="rgba(120,230,110,0.85)" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="img/5.jpg" title="description for this image" data-background="rgba(20,230,140,0.85)" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="img/6.jpg" title="description for this image" data-background="rgba(50,130,240,0.85)" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="img/7.jpg" title="description for this image" data-background="rgba(20,230,40,0.85)" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="img/8.jpg" title="description for this image" data-background="rgba(220,230,10,0.85)" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="img/9.jpg" title="description for this image" data-background="rgba(40,130,210,0.85)" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="img/10.jpg" title="description for this image" data-background="rgba(10,230,240,0.85)" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- demo end -->
+
+            <div class="des">
+                <p>Customize the background color of the overlay by the attribute of target.</p>
+            </div>
+
+            <div class="highlight" style="background: #272822"><pre style="line-height: 125%">
+    <span style="color: #f92672">&lt;div</span> <span style="color: #a6e22e">class=</span><span style="color: #e6db74">&quot;demo&quot;</span> <span style="color: #a6e22e">id=</span><span style="color: #e6db74">&quot;container&quot;</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;ul&gt;</span>
+            <span style="color: #f92672">&lt;li&gt;</span>
+                <span style="color: #f92672">&lt;a</span> <span style="color: #a6e22e">href=</span><span style="color: #e6db74">&quot;#&quot;</span><span style="color: #f92672">&gt;&lt;img</span> <span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;img/1.jpg&quot;</span> <span style="color: #a6e22e">data-background=</span><span style="color: #e6db74">&quot;rgba(120,100,240,0.85)&quot;</span> <span style="color: #f92672">/&gt;&lt;/a&gt;</span>
+            <span style="color: #f92672">&lt;/li&gt;</span>
+            <span style="color: #f92672">&lt;li&gt;</span>
+                <span style="color: #f92672">&lt;a</span> <span style="color: #a6e22e">href=</span><span style="color: #e6db74">&quot;#&quot;</span> <span style="color: #f92672">&gt;</span>
+                <span style="color: #f92672">&lt;img</span> <span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;img/2.jpg&quot;</span> <span style="color: #a6e22e">data-background=</span><span style="color: #e6db74">&quot;rgba(140,100,180,0.85)&quot;</span> <span style="color: #f92672">/&gt;</span>
+                <span style="color: #f92672">&lt;/a&gt;</span>
+            <span style="color: #f92672">&lt;/li&gt;</span>
+            ...
+        <span style="color: #f92672">&lt;/ul&gt;</span>
+    <span style="color: #f92672">&lt;/div&gt;</span>
+            </pre></div>
+
+            <div class="code">
+                <div class="highlight" style="background: #272822"><pre style="line-height: 125%">
+    <span style="color: #a6e22e">$</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">function</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+
+        <span style="color: #a6e22e">$</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;#container&#39;</span><span style="color: #f8f8f2">).</span><span style="color: #a6e22e">sliphover</span><span style="color: #f8f8f2">({</span>
+            <span style="color: #a6e22e">backgroundColorAttr</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;data-background&#39;</span>
+        <span style="color: #f8f8f2">});</span>
+
+    <span style="color: #f8f8f2">})</span></pre></div>
+            </div>
+        </div>
+
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery.sliphover.min.js"></script>
+
+        <script type="text/javascript">
+          $(function(){
+
+            $('#container').sliphover({
+              backgroundColorAttr: "data-background"
+            });
+
+          });
+        </script>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-46794744-6', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+    </body>
+</html>
