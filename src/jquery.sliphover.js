@@ -21,7 +21,8 @@
             backgroundColorAttr: null, //specify the attribute with background color value and opacity using rgba
             reverse: false, //reverse the direction
             height: '100%', //specify the height of the overlay
-            withLink: true //if image is wraped with a link the overlay will be clickable, set false to disable click
+            withLink: true, //if image is wraped with a link the overlay will be clickable, set false to disable click
+            direction:'' //fix direction
         };
 
     function SlipHover(element, options) {
@@ -54,8 +55,11 @@
 
                 $overlayContainer.off('mouseenter.sliphover mouseleave.sliphover').on('mouseenter.sliphover mouseleave.sliphover', function(event) {
                     //if (!$overlayContainer) return;
-                    var direction = that.getDirection($(this), event);
-
+                    // var direction = that.getDirection($(this), event);
+                    
+                    //check if direction option is fixed
+                    var direction = that.settings.direction ? that.settings.direction : that.getDirection($(this), event);
+                    
                     //check if reverse option is on
                     direction = that.settings.reverse ? direction = (direction + 2) % 4 : direction;
 
