@@ -110,21 +110,25 @@
 
             switch (direction) {
                 case 0:
+                case 'top':
                     //from top
                     left = 0;
                     bottom = '100%';
                     break;
                 case 1:
+                case 'right':
                     //from right
                     left = '100%';
                     bottom = 0;
                     break;
                 case 2:
+                case 'bottom':
                     //from bottom
                     left = 0;
                     bottom = '-100%';
                     break;
                 case 3:
+                case 'left':
                     //from left
                     left = '-100%';
                     bottom = 0;
@@ -188,24 +192,28 @@
 
             switch (direction) {
                 case 0: //to top
+                case 'top':
                     finalState = {
                         bottom: '100%',
                         left: 0
                     };
                     break;
                 case 1: //to right
+                case 'right':
                     finalState = {
                         bottom: 0,
                         left: '100%'
                     };
                     break;
                 case 2: //to bottom
+                case 'bottom':
                     finalState = {
                         bottom: '-100%',
                         left: 0
                     };
                     break;
                 case 3: //to left
+                case 'left':
                     finalState = {
                         bottom: 0,
                         left: '-100%'
