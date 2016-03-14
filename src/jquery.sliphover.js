@@ -58,7 +58,30 @@
                     // var direction = that.getDirection($(this), event);
                     
                     //check if direction option is fixed
-                    var direction = that.settings.direction ? that.settings.direction : that.getDirection($(this), event);
+                    if(that.settings.direction){
+                        var direction=(function(){
+                            var x;
+                            switch(that.settings.direction) {
+                                case 0:
+                                case 'top':
+                                    x = 0;break;
+                                case 1:
+                                case 'left':
+                                    x = 1;break;
+                                case 2:
+                                case 'bottom':
+                                    x = 2;break;
+                                case 3:
+                                case 'left':
+                                    x = 3;break;
+                                default:
+                                    window.console.error('error value for direction!');
+                            }
+                            return x;
+                        })();
+                    }else{
+                        var direction=that.getDirection($(this), event);
+                    }                    
                     
                     //check if reverse option is on
                     direction = that.settings.reverse ? direction = (direction + 2) % 4 : direction;
@@ -110,25 +133,21 @@
 
             switch (direction) {
                 case 0:
-                case 'top':
                     //from top
                     left = 0;
                     bottom = '100%';
                     break;
                 case 1:
-                case 'right':
                     //from right
                     left = '100%';
                     bottom = 0;
                     break;
                 case 2:
-                case 'bottom':
                     //from bottom
                     left = 0;
                     bottom = '-100%';
                     break;
                 case 3:
-                case 'left':
                     //from left
                     left = '-100%';
                     bottom = 0;
@@ -192,28 +211,24 @@
 
             switch (direction) {
                 case 0: //to top
-                case 'top':
                     finalState = {
                         bottom: '100%',
                         left: 0
                     };
                     break;
                 case 1: //to right
-                case 'right':
                     finalState = {
                         bottom: 0,
                         left: '100%'
                     };
                     break;
                 case 2: //to bottom
-                case 'bottom':
                     finalState = {
                         bottom: '-100%',
                         left: 0
                     };
                     break;
                 case 3: //to left
-                case 'left':
                     finalState = {
                         bottom: 0,
                         left: '-100%'
