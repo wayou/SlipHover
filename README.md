@@ -46,6 +46,7 @@ $("#container").sliphover({
 |-----------------|---------------|------------------|--------------------------------------------------|-------------	|
 | height          | string        | 100%             | The height of the overlay. e.g.`200px`,`50%`                        | [view](http://wayou.github.io/SlipHover/target.html) |
 | target          | string        | `'img'`            | Specify witch element the overlay will aplly on. Any valid CSS selector will do.| [view](http://wayou.github.io/SlipHover/target.html) |
+| parent          | string        | `'body'`           | Specify witch element the overlay container node will be appended to. Any valid CSS selector will do. | |
 | caption         | string        | `'title'`          | Witch attribute will be the content of the overlay. You can use custom HTML5 data attribute. e.g. `data-caption`                                    | [view](http://wayou.github.io/SlipHover/caption.html)     |
 | duration        | number/string | `'fast'`           | How long will the animation will be in millisecond, `fast` equals to `200` and `slow` equals to `600`. You can give you own number. e.g.`500`             | [view](http://wayou.github.io/SlipHover/duration.html)     |
 | fontColor       | string        | `'#fff'`           | The color of the text within the overlay         | [view](http://wayou.github.io/SlipHover/fontcolor.html)     |
