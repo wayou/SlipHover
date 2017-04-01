@@ -1,5 +1,5 @@
 /**
- * sliphover v2.0.5
+ * sliphover v2.0.6
  * require jquery 1.7+
  * MIT License
  * for more info pls visit :https://github.com/wayou/SlipHover
