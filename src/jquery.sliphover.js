@@ -86,6 +86,7 @@
             var $overlayContainer = $('<div>', {
                 class: 'sliphover-container'
             }).css({
+                pointerEvent: 'none',
                 width: width,
                 height: height,
                 position: 'absolute',
