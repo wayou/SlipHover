@@ -72,7 +72,7 @@ Besides examples in the option table above, there are a few nice demos shows sli
 ## Compatibility
 
 * Requirs jQuery 1.7+
-* Works well with all morder browsers and IE9+.
+* Works well with all modern browsers and IE9+.
 
 
 ## License
