@@ -76,7 +76,7 @@
                 });
             });
         },
-        createContainer: function($element, $parent) {
+        createContainer: function($element, parent) {
             //get the properties of the target
             var top = $element.offset().top,
                 left = $element.offset().left,
@@ -98,7 +98,7 @@
                 zIndex: zIndex == +zIndex ? (zIndex + 1) : 999 // if the z-index of the target is not number then use 999
             });
 
-            $($parent).append($overlayContainer);
+            $(parent).append($overlayContainer);
 
             return $overlayContainer;
         },
