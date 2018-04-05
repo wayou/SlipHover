@@ -12,6 +12,7 @@
     var pluginName = "sliphover",
         defaults = {
             target: 'img', //the element that the overlay will attach to
+            parent: 'body', //the element that the overlay container node will be appended to
             caption: 'title', //the caption that will display when hover
             duration: 'fast', //specify how long the animation will lasts in milliseconds
             fontColor: '#fff',
@@ -50,7 +51,7 @@
                 //use this instead of event.target for sometimes the event.target is not retriving the right target we want
                 //http://stackoverflow.com/questions/9838137/event-target-jquery-on-mousedown-up-is-not-giving-the-dom-specified-by-selecto
                 var $element = $(this),
-                    $overlayContainer = that.createContainer($element);
+                    $overlayContainer = that.createContainer($element, that.settings.parent);
 
                 $overlayContainer.off('mouseenter.sliphover mouseleave.sliphover').on('mouseenter.sliphover mouseleave.sliphover', function(event) {
                     //if (!$overlayContainer) return;
@@ -75,7 +76,7 @@
                 });
             });
         },
-        createContainer: function($element) {
+        createContainer: function($element, parent) {
             //get the properties of the target
             var top = $element.offset().top,
                 left = $element.offset().left,
@@ -97,7 +98,7 @@
                 zIndex: zIndex == +zIndex ? (zIndex + 1) : 999 // if the z-index of the target is not number then use 999
             });
 
-            $('body').append($overlayContainer);
+            $(parent).append($overlayContainer);
 
             return $overlayContainer;
         },
