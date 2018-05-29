@@ -170,7 +170,14 @@
                 color: instance.settings.fontColor,
                 backgroundColor: $overlayColor
             })
-                .html(content);
+                 // Add a reference to the original element. Could be used in conjunction
+                 // with a body click event to resolve the original DOM Element (e.g. to open a lightbox)
+                 // example: 
+                 // $("body").on("click", function (e) {
+                 //     $(e.target.parentNode.sliphoverRef.parentNode).click();
+                 // });
+                .prop('sliphoverRef', $element)
+                .html(content)
             return $overlay;
         },
         slideIn: function(instance, $overlay) {
